@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10112" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10080"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10083"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -21,7 +21,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ric's Elevator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEc-pe-wCh">
                                 <rect key="frame" x="249" y="53" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OaF-gt-xzS" userLabel="Elevator Stack">
@@ -113,6 +113,12 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Zbu-Un-hrP">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem title="Animate" id="MxN-tR-rQz" userLabel="Animate">
+                                        <connections>
+                                            <action selector="animateAction:" destination="BYZ-38-t0r" id="uWd-0a-rf9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NPT-Zy-R9u"/>
                                     <barButtonItem title="Exit" id="It7-m5-fLV">
                                         <connections>
                                             <action selector="exitAction:" destination="BYZ-38-t0r" id="dZa-i1-jOL"/>
@@ -135,10 +141,16 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="carriageA" destination="xln-4f-ptF" id="oeo-WL-Ma8"/>
                         <outlet property="carriageABottomConstraint" destination="QPa-Ty-a73" id="1n2-Lt-HeN"/>
+                        <outlet property="carriageB" destination="tdH-1I-0sr" id="Vwz-a3-1b2"/>
                         <outlet property="carriageBBottomConstraint" destination="bbL-b1-vjm" id="jVX-A0-Q5I"/>
+                        <outlet property="carriageC" destination="RAa-Jp-EjK" id="PvN-oz-4zk"/>
                         <outlet property="carriageCBottomConstraint" destination="2BR-1r-ANQ" id="A49-fW-95E"/>
+                        <outlet property="carriageD" destination="9hD-La-7Ha" id="fbU-6m-yzh"/>
                         <outlet property="carriageDBottomConstraint" destination="wFX-vO-Ff6" id="BxJ-tg-FtZ"/>
+                        <outlet property="ricLabel" destination="TEc-pe-wCh" id="IlR-Bt-C6J"/>
+                        <outlet property="ricLabelConstraint" destination="BVd-oO-GEu" id="TRS-tv-yFe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

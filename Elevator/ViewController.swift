@@ -22,8 +22,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func exitAction(sender: UIButton) {
-        exit(0)
+    // -----------------------------------------------------------------------------------------------------
+    
+        @IBAction func exitAction(sender: UIBarButtonItem) {
+            exit(0)
     }
 
 }

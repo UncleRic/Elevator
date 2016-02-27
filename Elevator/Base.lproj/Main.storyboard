@@ -18,13 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lmk-un-1je">
-                                <rect key="frame" x="542" y="550" width="30" height="30"/>
-                                <state key="normal" title="Exit"/>
-                                <connections>
-                                    <action selector="exitAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VOM-Ls-Y5x"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ric's Elevator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEc-pe-wCh">
                                 <rect key="frame" x="249" y="53" width="103" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -32,22 +25,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OaF-gt-xzS" userLabel="Elevator Stack">
-                                <rect key="frame" x="76" y="101" width="342" height="415"/>
+                                <rect key="frame" x="60" y="101" width="480" height="415"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGT-YB-7mn" userLabel="Elevator A">
-                                        <rect key="frame" x="0.0" y="0.0" width="78" height="415"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="113" height="415"/>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRh-Dt-92a" userLabel="Elevator B">
-                                        <rect key="frame" x="88" y="0.0" width="78" height="415"/>
+                                        <rect key="frame" x="123" y="0.0" width="113" height="415"/>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-VG-0Kf" userLabel="Elevator C">
-                                        <rect key="frame" x="176" y="0.0" width="78" height="415"/>
+                                        <rect key="frame" x="245" y="0.0" width="113" height="415"/>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQH-wK-5kp" userLabel="Elevator D">
-                                        <rect key="frame" x="264" y="0.0" width="78" height="415"/>
+                                        <rect key="frame" x="368" y="0.0" width="113" height="415"/>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -61,22 +54,29 @@
                                     </mask>
                                 </variation>
                             </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Zbu-Un-hrP">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem title="Exit" id="It7-m5-fLV">
+                                        <connections>
+                                            <action selector="exitAction:" destination="BYZ-38-t0r" id="dZa-i1-jOL"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" red="0.80124371360000002" green="1" blue="0.97811359539999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OaF-gt-xzS" secondAttribute="bottom" constant="84" id="9iY-5y-eKg"/>
                             <constraint firstItem="TEc-pe-wCh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="BVd-oO-GEu"/>
-                            <constraint firstItem="OaF-gt-xzS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="56" id="Isk-GN-FaV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OaF-gt-xzS" secondAttribute="trailing" constant="162" id="Ojr-9b-pbp"/>
+                            <constraint firstItem="OaF-gt-xzS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="Isk-GN-FaV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zbu-Un-hrP" secondAttribute="bottom" id="MxA-ha-qpg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OaF-gt-xzS" secondAttribute="trailing" constant="40" id="Ojr-9b-pbp"/>
                             <constraint firstItem="OaF-gt-xzS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="SdJ-gO-2ZA"/>
-                            <constraint firstItem="OaF-gt-xzS" firstAttribute="leading" secondItem="TEc-pe-wCh" secondAttribute="leading" id="k74-7z-hnE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Zbu-Un-hrP" secondAttribute="trailing" constant="-20" id="nYo-7h-RMq"/>
+                            <constraint firstItem="Zbu-Un-hrP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="tKf-We-y7z"/>
                             <constraint firstItem="TEc-pe-wCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y2w-ul-tF8"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="k74-7z-hnE"/>
-                            </mask>
-                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

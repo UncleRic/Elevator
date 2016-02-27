@@ -50,7 +50,7 @@
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdH-1I-0sr" userLabel="Carriage">
                                                 <rect key="frame" x="0.5" y="178" width="111.5" height="60"/>
-                                                <color key="backgroundColor" red="1" green="0.76296305529999997" blue="0.8831958553" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.75945534277575155" blue="0.59644844578010026" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="6W4-Ck-Uu4"/>
                                                 </constraints>
@@ -68,7 +68,7 @@
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAa-Jp-EjK" userLabel="Carriage">
                                                 <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
-                                                <color key="backgroundColor" red="1" green="0.76296305529999997" blue="0.8831958553" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.99300995372203393" blue="0.63017202210482304" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="6gf-nA-iu1"/>
                                                 </constraints>
@@ -86,7 +86,7 @@
                                         <subviews>
                                             <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-La-7Ha" userLabel="Carriage">
                                                 <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
-                                                <color key="backgroundColor" red="1" green="0.76296305529999997" blue="0.8831958553" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.58845458836961995" green="1" blue="0.5827453950835616" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="KA4-R2-bl0"/>
                                                 </constraints>

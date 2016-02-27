@@ -29,19 +29,75 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGT-YB-7mn" userLabel="Elevator A">
                                         <rect key="frame" x="0.0" y="0.0" width="113" height="415"/>
+                                        <subviews>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xln-4f-ptF" userLabel="Carriage">
+                                                <rect key="frame" x="0.0" y="296" width="111.5" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.76296305529999997" blue="0.8831958553" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="KWF-yU-BPc"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="xln-4f-ptF" secondAttribute="bottom" constant="59" id="QPa-Ty-a73"/>
+                                            <constraint firstItem="xln-4f-ptF" firstAttribute="leading" secondItem="tGT-YB-7mn" secondAttribute="leading" id="XRK-Xm-5Pi"/>
+                                            <constraint firstAttribute="trailing" secondItem="xln-4f-ptF" secondAttribute="trailing" constant="1" id="zG1-ca-pex"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRh-Dt-92a" userLabel="Elevator B">
                                         <rect key="frame" x="123" y="0.0" width="113" height="415"/>
+                                        <subviews>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdH-1I-0sr" userLabel="Carriage">
+                                                <rect key="frame" x="0.5" y="178" width="111.5" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.76296305529999997" blue="0.8831958553" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="6W4-Ck-Uu4"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="tdH-1I-0sr" secondAttribute="trailing" constant="1" id="KXj-hb-hRT"/>
+                                            <constraint firstItem="tdH-1I-0sr" firstAttribute="leading" secondItem="vRh-Dt-92a" secondAttribute="leading" constant="0.5" id="LtU-7Z-SRg"/>
+                                            <constraint firstAttribute="bottom" secondItem="tdH-1I-0sr" secondAttribute="bottom" constant="177" id="bbL-b1-vjm"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-VG-0Kf" userLabel="Elevator C">
                                         <rect key="frame" x="245" y="0.0" width="113" height="415"/>
+                                        <subviews>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAa-Jp-EjK" userLabel="Carriage">
+                                                <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.76296305529999997" blue="0.8831958553" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="6gf-nA-iu1"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="RAa-Jp-EjK" secondAttribute="bottom" constant="177" id="2BR-1r-ANQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="RAa-Jp-EjK" secondAttribute="trailing" constant="1.5" id="Pr2-9g-Knl"/>
+                                            <constraint firstItem="RAa-Jp-EjK" firstAttribute="leading" secondItem="ykn-VG-0Kf" secondAttribute="leading" id="WCb-s4-HsP"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQH-wK-5kp" userLabel="Elevator D">
                                         <rect key="frame" x="368" y="0.0" width="113" height="415"/>
+                                        <subviews>
+                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-La-7Ha" userLabel="Carriage">
+                                                <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
+                                                <color key="backgroundColor" red="1" green="0.76296305529999997" blue="0.8831958553" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="KA4-R2-bl0"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="9hD-La-7Ha" firstAttribute="leading" secondItem="mQH-wK-5kp" secondAttribute="leading" id="02x-sQ-R6C"/>
+                                            <constraint firstAttribute="trailing" secondItem="9hD-La-7Ha" secondAttribute="trailing" constant="1.5" id="ZfT-RL-PEl"/>
+                                            <constraint firstAttribute="bottom" secondItem="9hD-La-7Ha" secondAttribute="bottom" constant="177" id="wFX-vO-Ff6"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>

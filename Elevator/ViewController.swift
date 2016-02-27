@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BuildingViewController.swift
 //  Elevator
 //
 //  Created by Frederick C. Lee on 2/23/16.
@@ -8,8 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BuildingViewController: UIViewController {
 
+    @IBOutlet weak var carriageABottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var carriageBBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var carriageCBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var carriageDBottomConstraint: NSLayoutConstraint!
+    
     let building = Building()
     
     override func viewDidLoad() {

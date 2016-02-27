@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Building View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Elevator" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BuildingViewController" customModule="Elevator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -134,6 +134,12 @@
                             <constraint firstItem="TEc-pe-wCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y2w-ul-tF8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="carriageABottomConstraint" destination="QPa-Ty-a73" id="1n2-Lt-HeN"/>
+                        <outlet property="carriageBBottomConstraint" destination="bbL-b1-vjm" id="jVX-A0-Q5I"/>
+                        <outlet property="carriageCBottomConstraint" destination="2BR-1r-ANQ" id="A49-fW-95E"/>
+                        <outlet property="carriageDBottomConstraint" destination="wFX-vO-Ff6" id="BxJ-tg-FtZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

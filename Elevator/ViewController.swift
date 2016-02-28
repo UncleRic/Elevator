@@ -15,7 +15,7 @@ enum floor:CGFloat {
     case third = 240.0
     case second = 310.0
     case first = 380.0
-    case ground = 450.0
+    case ground = 452.0
 }
 
 enum carriageTag:Int {
@@ -60,7 +60,6 @@ class  BuildingViewController: UIViewController {
     
     var originalLeftCarriagePanelFrame:CGRect; var originalRightCarriagePanelFrame:CGRect
     
-    
     required init?(coder aDecoder: NSCoder) {
         originalLeftCarriagePanelFrame = CGRectZero; originalRightCarriagePanelFrame = CGRectZero
         super.init(coder: aDecoder)
@@ -71,10 +70,6 @@ class  BuildingViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         originalLeftCarriagePanelFrame = CGRect(x: 0, y: 0, width: 30, height: 60)
         originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
-        
-        //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BuildingViewController.handleTapForCarriage(_:)))
-        //        self.carriageA.addGestureRecognizer(tapRecognizer)
-        
     }
     
     // -----------------------------------------------------------------------------------------------------

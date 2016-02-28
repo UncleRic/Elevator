@@ -18,6 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-mw-Kpg" userLabel="Ground Floor">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="rgW-kb-OwZ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rgW-kb-OwZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="rgW-kb-OwZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ric's Elevators" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEc-pe-wCh">
                                 <rect key="frame" x="249" y="53" width="103" height="21"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
@@ -470,13 +487,42 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OaF-gt-xzS" secondAttribute="bottom" constant="84" id="9iY-5y-eKg"/>
                             <constraint firstItem="TEc-pe-wCh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="33" id="BVd-oO-GEu"/>
                             <constraint firstItem="OaF-gt-xzS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="Isk-GN-FaV"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="cuB-mw-Kpg" secondAttribute="bottom" constant="50" id="LNd-vL-HXX">
+                                <variation key="heightClass=regular-widthClass=compact" constant="84"/>
+                            </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Zbu-Un-hrP" secondAttribute="bottom" id="MxA-ha-qpg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cuB-mw-Kpg" secondAttribute="trailing" constant="40" id="Nt5-nd-h1d">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="OaF-gt-xzS" secondAttribute="trailing" constant="40" id="Ojr-9b-pbp"/>
                             <constraint firstItem="OaF-gt-xzS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="SdJ-gO-2ZA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Zbu-Un-hrP" secondAttribute="trailing" constant="-20" id="nYo-7h-RMq"/>
+                            <constraint firstItem="cuB-mw-Kpg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nwC-Ff-Wyl">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="Zbu-Un-hrP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="tKf-We-y7z"/>
                             <constraint firstItem="TEc-pe-wCh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="y2w-ul-tF8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="cuB-mw-Kpg"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Nt5-nd-h1d"/>
+                                <exclude reference="nwC-Ff-Wyl"/>
+                                <exclude reference="LNd-vL-HXX"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="cuB-mw-Kpg"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Nt5-nd-h1d"/>
+                                <include reference="nwC-Ff-Wyl"/>
+                                <include reference="LNd-vL-HXX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="carriageA" destination="xln-4f-ptF" id="oeo-WL-Ma8"/>

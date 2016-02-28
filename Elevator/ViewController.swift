@@ -34,12 +34,12 @@ class  BuildingViewController: UIViewController {
     
     // Elevator Carriage C:
     @IBOutlet weak var carriageC: UIView!
-    @IBOutlet weak var letCarriagePanelC: UIView!
+    @IBOutlet weak var leftCarriagePanelC: UIView!
     @IBOutlet weak var rightCarriagePanelC: UIView!
     
     // Elevator Carriage D:
     @IBOutlet weak var carriageD: UIView!
-    @IBOutlet weak var letCarriagePanelD: UIView!
+    @IBOutlet weak var leftCarriagePanelD: UIView!
     @IBOutlet weak var rightCarriagePanelD: UIView!
     
     
@@ -73,6 +73,9 @@ class  BuildingViewController: UIViewController {
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
         animateElevatorA()
+        animateElevatorB()
+        animateElevatorC()
+        animateElevatorD()
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -102,7 +105,6 @@ extension BuildingViewController {
             self.rightCarriagePanelA.frame = self.originalRightCarriagePanelFrame
         }) { (shit) in
             UIView.animateWithDuration(BuildingViewController.myDuration, animations: {
-                
                 self.carriageA.center = myCenter
             })
         }
@@ -128,5 +130,69 @@ extension BuildingViewController {
             
         }
     }
+    
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func animateElevatorB() {
+        var leftFrame = self.leftCarriagePanelB.frame
+        leftFrame.size.width = 4
+        var rightFrame = self.rightCarriagePanelB.frame
+        rightFrame.origin.x = 54
+        rightFrame.size.width = 4
+        UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
+            var myCenter = self.carriageB.center
+            myCenter.y = floor.fifth.rawValue
+            self.carriageB.center = myCenter
+        }) {(shit) in
+            UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+                self.leftCarriagePanelB.frame = leftFrame
+                self.rightCarriagePanelB.frame = rightFrame
+            })
+        }
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func animateElevatorC() {
+        var leftFrame = self.leftCarriagePanelC.frame
+        leftFrame.size.width = 4
+        var rightFrame = self.rightCarriagePanelC.frame
+        rightFrame.origin.x = 54
+        rightFrame.size.width = 4
+        UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
+            var myCenter = self.carriageC.center
+            myCenter.y = floor.fifth.rawValue
+            self.carriageC.center = myCenter
+        }) {(shit) in
+            UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+                self.leftCarriagePanelC.frame = leftFrame
+                self.rightCarriagePanelC.frame = rightFrame
+            })
+        }
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func animateElevatorD() {
+        var leftFrame = self.leftCarriagePanelD.frame
+        leftFrame.size.width = 4
+        var rightFrame = self.rightCarriagePanelD.frame
+        rightFrame.origin.x = 54
+        rightFrame.size.width = 4
+        UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
+            var myCenter = self.carriageD.center
+            myCenter.y = floor.fifth.rawValue
+            self.carriageD.center = myCenter
+        }) {(shit) in
+            UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+                self.leftCarriagePanelD.frame = leftFrame
+                self.rightCarriagePanelD.frame = rightFrame
+            })
+        }
+    }
+
+
+
 }
 

@@ -59,14 +59,15 @@ class  BuildingViewController: UIViewController {
         super.init(coder: aDecoder)
     }
     
+    // -----------------------------------------------------------------------------------------------------
+    
     override func viewDidLayoutSubviews() {
         originalLeftCarriagePanelFrame = CGRect(x: 0, y: 0, width: 30, height: 60)
         originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BuildingViewController.handleTapForCarriageA))
+        self.carriageA.addGestureRecognizer(tapRecognizer)
+        
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -88,6 +89,13 @@ class  BuildingViewController: UIViewController {
     
     @IBAction func exitAction(sender: UIBarButtonItem) {
         exit(0)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    // MARK: - Tap Recognizers
+    
+    func handleTapForCarriageA() {
+        print("--- TAP RECOGNIZER ---")
     }
 }
 

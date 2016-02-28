@@ -63,11 +63,21 @@ class BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
-        
-        UIView.animateWithDuration(BuildingViewController.myDuration) {
+        var leftFrame = self.leftCarriagePanelA.frame
+        leftFrame.size.width = 4
+        var rightFrame = self.rightCarriagePanelA.frame
+        rightFrame.origin.x = 54
+        rightFrame.size.width = 4
+        UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageA.center
             myCenter.y = floor.fifth.rawValue
             self.carriageA.center = myCenter
+        }) { (shit) in
+            UIView.animateWithDuration(BuildingViewController.myDuration, animations: {
+                self.leftCarriagePanelA.frame = leftFrame
+                self.rightCarriagePanelA.frame = rightFrame
+            })
+            
         }
     }
     

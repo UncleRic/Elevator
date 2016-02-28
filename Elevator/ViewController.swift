@@ -27,8 +27,11 @@ class BuildingViewController: UIViewController {
     @IBOutlet weak var rightCarriagePanelA: UIView!
     
     
-    
     @IBOutlet weak var carriageB: UIView!
+    @IBOutlet weak var leftCarriagePanelB: UIView!
+    @IBOutlet weak var rightCarriagePanelB: UIView!
+    
+    
     @IBOutlet weak var carriageC: UIView!
     @IBOutlet weak var carriageD: UIView!
     

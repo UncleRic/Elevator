@@ -429,6 +429,11 @@
                                             <action selector="animateAction:" destination="BYZ-38-t0r" id="uWd-0a-rf9"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Reset" id="SQP-IX-f1L" userLabel="Reset">
+                                        <connections>
+                                            <action selector="resetAction:" destination="BYZ-38-t0r" id="aLZ-8R-4Zn"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="NPT-Zy-R9u"/>
                                     <barButtonItem title="Exit" id="It7-m5-fLV">
                                         <connections>

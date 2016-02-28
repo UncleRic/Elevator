@@ -48,7 +48,7 @@ class BuildingViewController: UIViewController {
     @IBOutlet weak var carriageCBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var carriageDBottomConstraint: NSLayoutConstraint!
     
-    let building = Building()
+    static let myDuration:NSTimeInterval = 3.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,13 +63,39 @@ class BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
-        let myDuration:NSTimeInterval = 3.0
-        UIView.animateWithDuration(myDuration) {
+        
+        UIView.animateWithDuration(BuildingViewController.myDuration) {
             var myCenter = self.carriageA.center
-            myCenter.y = floor.ground.rawValue
+            myCenter.y = floor.fifth.rawValue
             self.carriageA.center = myCenter
         }
     }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    @IBAction func resetAction(sender: UIBarButtonItem) {
+        UIView.animateWithDuration(BuildingViewController.myDuration) {
+            var myCenter = self.carriageA.center
+            myCenter.y = floor.ground.rawValue
+            self.carriageA.center = myCenter
+            
+            myCenter = self.carriageB.center
+            myCenter.y = floor.ground.rawValue
+            self.carriageB.center = myCenter
+            
+            myCenter = self.carriageC.center
+            myCenter.y = floor.ground.rawValue
+            self.carriageC.center = myCenter
+            
+            myCenter = self.carriageD.center
+            myCenter.y = floor.ground.rawValue
+            self.carriageD.center = myCenter
+            
+        }
+        
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
     
     @IBAction func exitAction(sender: UIBarButtonItem) {
         exit(0)

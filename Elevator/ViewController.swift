@@ -18,6 +18,13 @@ enum floor:CGFloat {
     case ground = 450.0
 }
 
+enum carriageTag:Int {
+    case carriageATag = 1
+    case carriageBTag = 2
+    case carriageCTag = 3
+    case carriageDTag = 4
+}
+
 class  BuildingViewController: UIViewController {
     @IBOutlet weak var ricLabel: UILabel!
     @IBOutlet weak var ricLabelConstraint: NSLayoutConstraint!
@@ -65,8 +72,8 @@ class  BuildingViewController: UIViewController {
         originalLeftCarriagePanelFrame = CGRect(x: 0, y: 0, width: 30, height: 60)
         originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
         
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BuildingViewController.handleTapForCarriageA))
-        self.carriageA.addGestureRecognizer(tapRecognizer)
+        //        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(BuildingViewController.handleTapForCarriage(_:)))
+        //        self.carriageA.addGestureRecognizer(tapRecognizer)
         
     }
     
@@ -94,8 +101,20 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     // MARK: - Tap Recognizers
     
-    func handleTapForCarriageA() {
-        print("--- TAP RECOGNIZER ---")
+    @IBAction func handleTapForCarriage(sender:UITapGestureRecognizer) {
+        
+        if let carriage = carriageTag(rawValue: sender.view!.tag) {
+            switch carriage {
+            case .carriageATag:
+                print("Carriage A")
+            case .carriageBTag:
+                print("Carriage B")
+            case .carriageCTag:
+                print("Carriage C")
+            case .carriageDTag:
+                print("Carriage D")
+            }
+        }
     }
 }
 
@@ -218,7 +237,11 @@ extension BuildingViewController {
             })
         }
     }
-
-
 }
+
+
+
+
+
+
 

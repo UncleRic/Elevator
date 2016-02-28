@@ -77,6 +77,7 @@
                                                         </variation>
                                                     </view>
                                                 </subviews>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="uhH-Ax-KXC" firstAttribute="height" secondItem="etP-Xr-JPV" secondAttribute="height" id="A6v-OQ-mPw"/>
                                                     <constraint firstAttribute="trailing" secondItem="uhH-Ax-KXC" secondAttribute="trailing" constant="1" id="Jbi-Lw-WSX"/>
@@ -114,6 +115,9 @@
                                                         <include reference="jiX-nO-XSi"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="bey-Qs-jac" appends="YES" id="pcN-B6-jAL"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
@@ -126,12 +130,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRh-Dt-92a" userLabel="Elevator B">
                                         <rect key="frame" x="123" y="0.0" width="113" height="415"/>
                                         <subviews>
-                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdH-1I-0sr" userLabel="Carriage">
+                                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdH-1I-0sr" userLabel="Carriage">
                                                 <rect key="frame" x="0.5" y="178" width="111.5" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ7-os-lgE" userLabel="Left Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                         <color key="backgroundColor" red="0.85625553129999998" green="0.0" blue="0.086592964829999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="OTn-F4-Omh"/>
                                                             <constraint firstAttribute="height" constant="60" id="osS-yU-fY2"/>
@@ -152,6 +157,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Je-Ah-V2K" userLabel="Right Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                         <color key="backgroundColor" red="0.85625553129999998" green="0.0" blue="0.086592964829999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="ecz-vA-gZp"/>
                                                             <constraint firstAttribute="width" constant="30" id="zmP-JZ-tKs"/>
@@ -171,6 +177,7 @@
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.75945534277575155" blue="0.59644844578010026" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="6W4-Ck-Uu4"/>
                                                     <constraint firstAttribute="trailing" secondItem="6Je-Ah-V2K" secondAttribute="trailing" constant="1" id="971-OY-ArS"/>
@@ -208,6 +215,9 @@
                                                         <include reference="wRF-aI-VyT"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="83N-em-y6l" appends="YES" id="hOy-5E-5Va"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
@@ -220,7 +230,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-VG-0Kf" userLabel="Elevator C">
                                         <rect key="frame" x="245" y="0.0" width="113" height="415"/>
                                         <subviews>
-                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAa-Jp-EjK" userLabel="Carriage">
+                                            <view autoresizesSubviews="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAa-Jp-EjK" userLabel="Carriage">
                                                 <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7e-fY-3Mo" userLabel="Left Panel">
@@ -265,6 +275,7 @@
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.99300995372203393" blue="0.63017202210482304" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="6gf-nA-iu1"/>
                                                     <constraint firstItem="bs3-ce-UDJ" firstAttribute="height" secondItem="F7e-fY-3Mo" secondAttribute="height" id="Jhi-9L-MOg"/>
@@ -306,6 +317,9 @@
                                                         <include reference="y7v-Hh-tHf"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="ZtF-35-9q5" appends="YES" id="Ljp-Sa-5K2"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
@@ -318,7 +332,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQH-wK-5kp" userLabel="Elevator D">
                                         <rect key="frame" x="368" y="0.0" width="113" height="415"/>
                                         <subviews>
-                                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-La-7Ha" userLabel="Carriage">
+                                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-La-7Ha" userLabel="Carriage">
                                                 <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-Lg-Jry" userLabel="Left Panel">
@@ -344,6 +358,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Aa-U8-poh" userLabel="Right Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                                         <color key="backgroundColor" red="0.85625553129999998" green="0.0" blue="0.086592964829999994" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="I1W-yg-xkh"/>
                                                             <constraint firstAttribute="width" constant="30" id="wmm-kH-sWc"/>
@@ -363,6 +378,7 @@
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.58845458836961995" green="1" blue="0.5827453950835616" alpha="1" colorSpace="calibratedRGB"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="9Aa-U8-poh" secondAttribute="trailing" constant="15.5" id="HXB-xj-c1O">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -404,6 +420,9 @@
                                                         <include reference="tzV-3R-D8e"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="cNP-gJ-etA" appends="YES" id="WRS-cg-3Rd"/>
+                                                </connections>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
@@ -481,6 +500,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="83N-em-y6l">
+                    <connections>
+                        <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="IFi-qH-gyT"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZtF-35-9q5">
+                    <connections>
+                        <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="WHp-Xm-H55"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="cNP-gJ-etA">
+                    <connections>
+                        <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="h8R-DJ-LYQ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bey-Qs-jac">
+                    <connections>
+                        <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="hGf-0P-aPh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="240" y="338"/>
         </scene>

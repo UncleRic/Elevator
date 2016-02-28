@@ -103,9 +103,28 @@ extension BuildingViewController {
         UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
             self.leftCarriagePanelA.frame = self.originalLeftCarriagePanelFrame
             self.rightCarriagePanelA.frame = self.originalRightCarriagePanelFrame
+            self.leftCarriagePanelB.frame = self.originalLeftCarriagePanelFrame
+            self.rightCarriagePanelB.frame = self.originalRightCarriagePanelFrame
+            self.leftCarriagePanelC.frame = self.originalLeftCarriagePanelFrame
+            self.rightCarriagePanelC.frame = self.originalRightCarriagePanelFrame
+            self.leftCarriagePanelD.frame = self.originalLeftCarriagePanelFrame
+            self.rightCarriagePanelD.frame = self.originalRightCarriagePanelFrame
+            
         }) { (shit) in
             UIView.animateWithDuration(BuildingViewController.myDuration, animations: {
                 self.carriageA.center = myCenter
+                
+                myCenter = self.carriageB.center
+                myCenter.y = floor.ground.rawValue
+                self.carriageB.center = myCenter
+                
+                myCenter = self.carriageC.center
+                myCenter.y = floor.ground.rawValue
+                self.carriageC.center = myCenter
+                
+                myCenter = self.carriageD.center
+                myCenter.y = floor.ground.rawValue
+                self.carriageD.center = myCenter
             })
         }
     }
@@ -191,7 +210,6 @@ extension BuildingViewController {
             })
         }
     }
-
 
 
 }

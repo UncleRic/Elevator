@@ -18,7 +18,7 @@ enum floor:CGFloat {
     case ground = 450.0
 }
 
-class BuildingViewController: UIViewController {
+class  BuildingViewController: UIViewController {
     @IBOutlet weak var ricLabel: UILabel!
     @IBOutlet weak var ricLabelConstraint: NSLayoutConstraint!
     
@@ -49,10 +49,19 @@ class BuildingViewController: UIViewController {
     @IBOutlet weak var carriageDBottomConstraint: NSLayoutConstraint!
     
     static let myDuration:NSTimeInterval = 3.0
+    static let myPanelDuration:NSTimeInterval = 1.0
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    var originalLeftCarriagePanelFrame:CGRect; var originalRightCarriagePanelFrame:CGRect
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        originalLeftCarriagePanelFrame = CGRectZero; originalRightCarriagePanelFrame = CGRectZero
+        super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        originalLeftCarriagePanelFrame = CGRect(x: 0, y: 0, width: 30, height: 60)
+        originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,6 +72,45 @@ class BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
+        animateElevatorA()
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    @IBAction func resetAction(sender: UIBarButtonItem) {
+        resetElevators()
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    @IBAction func exitAction(sender: UIBarButtonItem) {
+        exit(0)
+    }
+}
+
+// ===================================================================================================
+
+extension BuildingViewController {
+    
+    func resetElevators() {
+        
+        var myCenter = self.carriageA.center
+        myCenter.y = floor.ground.rawValue
+        
+        UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+            self.leftCarriagePanelA.frame = self.originalLeftCarriagePanelFrame
+            self.rightCarriagePanelA.frame = self.originalRightCarriagePanelFrame
+        }) { (shit) in
+            UIView.animateWithDuration(BuildingViewController.myDuration, animations: {
+                
+                self.carriageA.center = myCenter
+            })
+        }
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func animateElevatorA() {
         var leftFrame = self.leftCarriagePanelA.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelA.frame
@@ -72,44 +120,13 @@ class BuildingViewController: UIViewController {
             var myCenter = self.carriageA.center
             myCenter.y = floor.fifth.rawValue
             self.carriageA.center = myCenter
-        }) { (shit) in
-            UIView.animateWithDuration(BuildingViewController.myDuration, animations: {
+        }) {(shit) in
+            UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelA.frame = leftFrame
                 self.rightCarriagePanelA.frame = rightFrame
             })
             
         }
     }
-    
-    // -----------------------------------------------------------------------------------------------------
-    
-    @IBAction func resetAction(sender: UIBarButtonItem) {
-        UIView.animateWithDuration(BuildingViewController.myDuration) {
-            var myCenter = self.carriageA.center
-            myCenter.y = floor.ground.rawValue
-            self.carriageA.center = myCenter
-            
-            myCenter = self.carriageB.center
-            myCenter.y = floor.ground.rawValue
-            self.carriageB.center = myCenter
-            
-            myCenter = self.carriageC.center
-            myCenter.y = floor.ground.rawValue
-            self.carriageC.center = myCenter
-            
-            myCenter = self.carriageD.center
-            myCenter.y = floor.ground.rawValue
-            self.carriageD.center = myCenter
-            
-        }
-        
-    }
-    
-    // -----------------------------------------------------------------------------------------------------
-    
-    @IBAction func exitAction(sender: UIBarButtonItem) {
-        exit(0)
-    }
-    
 }
 

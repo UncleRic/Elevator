@@ -292,6 +292,7 @@
 				184A62B21C7CEC9300BBC747 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -21,7 +21,13 @@ enum floor:CGFloat {
 class BuildingViewController: UIViewController {
     @IBOutlet weak var ricLabel: UILabel!
     @IBOutlet weak var ricLabelConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var carriageA: UIView!
+    @IBOutlet weak var leftCarriagePanelA: UIView!
+    @IBOutlet weak var rightCarriagePanelA: UIView!
+    
+    
+    
     @IBOutlet weak var carriageB: UIView!
     @IBOutlet weak var carriageC: UIView!
     @IBOutlet weak var carriageD: UIView!

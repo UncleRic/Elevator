@@ -46,6 +46,11 @@ class  BuildingViewController: UIViewController {
     static let myDuration:NSTimeInterval = 3.0
     static let myPanelDuration:NSTimeInterval = 1.0
     
+    let ElevatorA = Elevator(id: "A")
+    let ElevatorB = Elevator(id: "B")
+    let ElevatorC = Elevator(id: "C")
+    let ElevatorD = Elevator(id: "D")
+    
     var originalLeftCarriagePanelFrame:CGRect; var originalRightCarriagePanelFrame:CGRect
     
     required init?(coder aDecoder: NSCoder) {
@@ -63,6 +68,9 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:nil)
+        
         animateElevatorA()
         animateElevatorB()
         animateElevatorC()
@@ -118,6 +126,7 @@ class  BuildingViewController: UIViewController {
                 print("Third Floor")
                 
             case .penthouse:
+                showAlert(sender: self, withTitle: "Penthouse", withMessage: "Going Down", alertPurpose:.simple)
                 print("The Penthouse")
                 
             }

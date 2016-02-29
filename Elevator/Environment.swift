@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kRideRequestNotification = "RideRequest"
+
 enum FloorPosition:CGFloat {
     case penthouse = 30.0
     case third = 140.0

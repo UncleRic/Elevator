@@ -9,7 +9,7 @@ import Foundation
 
 class Elevator:NSObject {
     var id = "A"
-    var currentFloor:Int = 0
+    var currentFloor:FloorTag = .ground
     var selectedFloors = [Int]()
     var isUpwardBound = false
     var inTransit = false
@@ -23,7 +23,6 @@ class Elevator:NSObject {
         self.id = id
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Elevator.handleRideRequest),
                                                          name:kRideRequestNotification, object: nil)
-        print("Class Elevator *Convenience* init.")
     }
     
     deinit {
@@ -33,6 +32,21 @@ class Elevator:NSObject {
     func handleRideRequest() {
         print("Handle Ride Request for id: \(id)")
     }
-
+    
+    func floorCheck(theFloor:FloorPosition) {
+        switch theFloor {
+            case .ground:
+                print("Carriage '\(id)' is on the ground floor.")
+            case .first:
+                print("Carriage '\(id)' is on the first floor.")
+            case .second:
+                print("Carriage '\(id)' is on the second floor.")
+            case .third:
+                print("Carriage '\(id)' is on the third floor.")
+            case .penthouse:
+                print("Carriage '\(id)' is on the fourth floor.")
+        }
+    }
+    
 }
 

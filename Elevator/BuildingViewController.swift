@@ -46,10 +46,10 @@ class  BuildingViewController: UIViewController {
     static let myDuration:NSTimeInterval = 3.0
     static let myPanelDuration:NSTimeInterval = 1.0
     
-    let ElevatorA = Elevator(id: "A")
-    let ElevatorB = Elevator(id: "B")
-    let ElevatorC = Elevator(id: "C")
-    let ElevatorD = Elevator(id: "D")
+    let elevatorA = Elevator(id: "A")
+    let elevatorB = Elevator(id: "B")
+    let elevatorC = Elevator(id: "C")
+    let elevatorD = Elevator(id: "D")
     
     var originalLeftCarriagePanelFrame:CGRect; var originalRightCarriagePanelFrame:CGRect
     
@@ -189,6 +189,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelA.frame = leftFrame
                 self.rightCarriagePanelA.frame = rightFrame
+                self.elevatorA.floorCheck(FloorPosition.penthouse)
             })
             
         }
@@ -211,6 +212,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelB.frame = leftFrame
                 self.rightCarriagePanelB.frame = rightFrame
+                self.elevatorB.floorCheck(FloorPosition.third)
             })
         }
     }
@@ -231,6 +233,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelC.frame = leftFrame
                 self.rightCarriagePanelC.frame = rightFrame
+                self.elevatorC.floorCheck(FloorPosition.second)
             })
         }
     }
@@ -248,6 +251,7 @@ extension BuildingViewController {
             myCenter.y = FloorPosition.first.rawValue
             self.carriageD.center = myCenter
         }) {(shit) in
+            self.elevatorD.floorCheck(FloorPosition.first)
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelD.frame = leftFrame
                 self.rightCarriagePanelD.frame = rightFrame

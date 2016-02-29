@@ -1,20 +1,17 @@
-//
 //  BuildingViewController.swift
 //  Elevator
 //
 //  Created by Frederick C. Lee on 2/23/16.
 //  Copyright © 2016 Swift International. All rights reserved.
-//
+// -----------------------------------------------------------------------------------------------------
 
 import UIKit
 
 enum floor:CGFloat {
     case top = 30.0
-    case fifth = 100.0
-    case forth = 170.0
-    case third = 240.0
-    case second = 310.0
-    case first = 380.0
+    case third = 140.0
+    case second = 230.0
+    case first = 334.0
     case ground = 452.0
 }
 
@@ -167,7 +164,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageA.center
-            myCenter.y = floor.fifth.rawValue
+            myCenter.y = floor.top.rawValue
             self.carriageA.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -189,7 +186,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageB.center
-            myCenter.y = floor.fifth.rawValue
+            myCenter.y = floor.third.rawValue
             self.carriageB.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -209,7 +206,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageC.center
-            myCenter.y = floor.fifth.rawValue
+            myCenter.y = floor.second.rawValue
             self.carriageC.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -229,7 +226,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageD.center
-            myCenter.y = floor.fifth.rawValue
+            myCenter.y = floor.first.rawValue
             self.carriageD.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {

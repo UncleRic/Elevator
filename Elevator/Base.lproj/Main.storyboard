@@ -560,11 +560,13 @@
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
                                     <barButtonItem title="Animate" id="MxN-tR-rQz" userLabel="Animate">
+                                        <color key="tintColor" red="0.99712616210000005" green="1" blue="0.76878422499999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="animateAction:" destination="BYZ-38-t0r" id="uWd-0a-rf9"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Reset" id="SQP-IX-f1L" userLabel="Reset">
+                                        <color key="tintColor" red="0.93650108580000002" green="0.95151317120000001" blue="0.93610924480000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="resetAction:" destination="BYZ-38-t0r" id="aLZ-8R-4Zn"/>
                                         </connections>

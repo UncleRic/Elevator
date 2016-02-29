@@ -29,6 +29,12 @@ class  BuildingViewController: UIViewController {
     @IBOutlet weak var ricLabel: UILabel!
     @IBOutlet weak var ricLabelConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var groundFloor: UIView!
+    @IBOutlet weak var firstFloor: UIView!
+    @IBOutlet weak var secondFloor: UIView!
+    @IBOutlet weak var thirdFloor: UIView!
+    @IBOutlet weak var penthouseFloor: UIView!
+    
     // Elevator Carriage A:
     @IBOutlet weak var carriageA: UIView!
     @IBOutlet weak var leftCarriagePanelA: UIView!

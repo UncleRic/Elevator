@@ -72,7 +72,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="eaV-PX-F8s" appends="YES" id="tTt-Hc-nOM"/>
+                                    <outletCollection property="gestureRecognizers" destination="cH9-aU-4AJ" appends="YES" id="j0s-yl-gU6"/>
                                 </connections>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH0-Y7-XJ1" userLabel="Second Floor">
@@ -98,7 +98,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Q8T-cK-jcN" appends="YES" id="ymx-ZC-rLJ"/>
+                                    <outletCollection property="gestureRecognizers" destination="eaV-PX-F8s" appends="YES" id="Q3a-wG-869"/>
                                 </connections>
                             </view>
                             <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-LT-w1P" userLabel="Third Floor">
@@ -122,7 +122,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Tkh-bN-SLN" appends="YES" id="wWT-eD-1rB"/>
+                                    <outletCollection property="gestureRecognizers" destination="Q8T-cK-jcN" appends="YES" id="7Hk-7w-Mjv"/>
                                 </connections>
                             </view>
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-pp-Bpu" userLabel="Penthouse">
@@ -144,6 +144,9 @@
                                         <include reference="zIg-wX-AbZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Tkh-bN-SLN" appends="YES" id="Vsf-OC-teZ"/>
+                                </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OaF-gt-xzS" userLabel="Elevator Stack">
                                 <rect key="frame" x="60" y="101" width="480" height="415"/>
@@ -745,11 +748,31 @@
                         <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="hGf-0P-aPh"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="Tkh-bN-SLN" userLabel="Penthouse Floor-Tap Gester Recognizer"/>
-                <tapGestureRecognizer id="Q8T-cK-jcN" userLabel="Third-Floor Tap Gesture Recognizer"/>
-                <tapGestureRecognizer id="eaV-PX-F8s" userLabel="Second-Floor Tap Gesture Recognizer"/>
-                <tapGestureRecognizer id="cH9-aU-4AJ" userLabel="Third-Floor Tap Gesture Recognizer"/>
-                <tapGestureRecognizer id="L87-79-dpc" userLabel="Ground-Floor Tap Gesture Recognizer"/>
+                <tapGestureRecognizer id="Tkh-bN-SLN" userLabel="Penthouse Floor-Tap Gester Recognizer">
+                    <connections>
+                        <action selector="handleTapForFloors:" destination="BYZ-38-t0r" id="yA0-9U-N7b"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Q8T-cK-jcN" userLabel="Third-Floor Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="handleTapForFloors:" destination="BYZ-38-t0r" id="niO-pP-pjU"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="eaV-PX-F8s" userLabel="Second-Floor Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="handleTapForFloors:" destination="BYZ-38-t0r" id="wuy-Kn-I7z"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="cH9-aU-4AJ" userLabel="First-Floor Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="handleTapForFloors:" destination="BYZ-38-t0r" id="YoO-el-alB"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="L87-79-dpc" userLabel="Ground-Floor Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="handleTapForFloors:" destination="BYZ-38-t0r" id="PvC-fA-lfa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="240" y="338"/>
         </scene>

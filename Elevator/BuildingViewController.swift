@@ -103,7 +103,25 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     @IBAction func handleTapForFloors(sender: UITapGestureRecognizer) {
-        
+        if let floor = FloorTag(rawValue: sender.view!.tag) {
+            switch floor {
+            case .ground:
+                print("Ground Floor")
+                
+            case .first:
+                print("First Floor")
+                
+            case .second:
+                print("Second Floor")
+                
+            case .third:
+                print("Third Floor")
+                
+            case .penthouse:
+                print("The Penthouse")
+                
+            }
+        }
     }
 }
 

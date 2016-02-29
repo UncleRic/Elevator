@@ -7,21 +7,6 @@
 
 import UIKit
 
-enum floor:CGFloat {
-    case top = 30.0
-    case third = 140.0
-    case second = 230.0
-    case first = 334.0
-    case ground = 452.0
-}
-
-enum carriageTag:Int {
-    case carriageATag = 1
-    case carriageBTag = 2
-    case carriageCTag = 3
-    case carriageDTag = 4
-}
-
 class  BuildingViewController: UIViewController {
     @IBOutlet weak var ricLabel: UILabel!
     @IBOutlet weak var ricLabelConstraint: NSLayoutConstraint!
@@ -101,7 +86,7 @@ class  BuildingViewController: UIViewController {
     
     @IBAction func handleTapForCarriage(sender:UITapGestureRecognizer) {
         
-        if let carriage = carriageTag(rawValue: sender.view!.tag) {
+        if let carriage = CarriageTag(rawValue: sender.view!.tag) {
             switch carriage {
             case .carriageATag:
                 print("Carriage A")
@@ -114,16 +99,23 @@ class  BuildingViewController: UIViewController {
             }
         }
     }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    @IBAction func handleTapForFloors(sender: UITapGestureRecognizer) {
+        
+    }
 }
 
 // ===================================================================================================
+// MARK: -
 
 extension BuildingViewController {
     
     func resetElevators() {
         
         var myCenter = self.carriageA.center
-        myCenter.y = floor.ground.rawValue
+        myCenter.y = FloorPosition.ground.rawValue
         
         UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
             self.leftCarriagePanelA.frame = self.originalLeftCarriagePanelFrame
@@ -140,15 +132,15 @@ extension BuildingViewController {
                 self.carriageA.center = myCenter
                 
                 myCenter = self.carriageB.center
-                myCenter.y = floor.ground.rawValue
+                myCenter.y = FloorPosition.ground.rawValue
                 self.carriageB.center = myCenter
                 
                 myCenter = self.carriageC.center
-                myCenter.y = floor.ground.rawValue
+                myCenter.y = FloorPosition.ground.rawValue
                 self.carriageC.center = myCenter
                 
                 myCenter = self.carriageD.center
-                myCenter.y = floor.ground.rawValue
+                myCenter.y = FloorPosition.ground.rawValue
                 self.carriageD.center = myCenter
             })
         }
@@ -164,7 +156,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageA.center
-            myCenter.y = floor.top.rawValue
+            myCenter.y = FloorPosition.penthouse.rawValue
             self.carriageA.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -186,7 +178,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageB.center
-            myCenter.y = floor.third.rawValue
+            myCenter.y = FloorPosition.third.rawValue
             self.carriageB.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -206,7 +198,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageC.center
-            myCenter.y = floor.second.rawValue
+            myCenter.y = FloorPosition.second.rawValue
             self.carriageC.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -226,7 +218,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageD.center
-            myCenter.y = floor.first.rawValue
+            myCenter.y = FloorPosition.first.rawValue
             self.carriageD.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {

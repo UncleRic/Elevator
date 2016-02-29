@@ -30,6 +30,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-mw-Kpg" userLabel="Ground Floor">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="cBz-py-LBs"/>
                                     <constraint firstAttribute="height" constant="60" id="rgW-kb-OwZ"/>
@@ -46,10 +47,14 @@
                                         <include reference="rgW-kb-OwZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="L87-79-dpc" appends="YES" id="tQl-zg-yCo"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-8P-IV0" userLabel="First Floor">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-8P-IV0" userLabel="First-Floor">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="MZP-Kc-Gpa"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="gGp-LJ-Tda"/>
@@ -66,10 +71,14 @@
                                         <include reference="gGp-LJ-Tda"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eaV-PX-F8s" appends="YES" id="tTt-Hc-nOM"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH0-Y7-XJ1" userLabel="Second Floor">
+                            <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH0-Y7-XJ1" userLabel="Second Floor">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="2Ee-Ho-zPc">
                                         <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -88,10 +97,14 @@
                                         <exclude reference="hC4-Us-1jH"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Q8T-cK-jcN" appends="YES" id="ymx-ZC-rLJ"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-LT-w1P" userLabel="Third Floor">
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-LT-w1P" userLabel="Third Floor">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="725-Ti-OXz"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="All-g4-FaD"/>
@@ -108,8 +121,11 @@
                                         <include reference="All-g4-FaD"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Tkh-bN-SLN" appends="YES" id="wWT-eD-1rB"/>
+                                </connections>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-pp-Bpu" userLabel="Penthouse">
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-pp-Bpu" userLabel="Penthouse">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -709,26 +725,31 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="83N-em-y6l">
+                <tapGestureRecognizer id="83N-em-y6l" userLabel="Carriage-B Tap Gesture Recognizer">
                     <connections>
                         <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="IFi-qH-gyT"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="ZtF-35-9q5">
+                <tapGestureRecognizer id="ZtF-35-9q5" userLabel="Carriage-C Tap Gesture Recognizer">
                     <connections>
                         <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="WHp-Xm-H55"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="cNP-gJ-etA">
+                <tapGestureRecognizer id="cNP-gJ-etA" userLabel="Carriage-D Tap Gesture Recognizer">
                     <connections>
                         <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="h8R-DJ-LYQ"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="bey-Qs-jac">
+                <tapGestureRecognizer id="bey-Qs-jac" userLabel="Carriage-A Tap Gesture Recognizer">
                     <connections>
                         <action selector="handleTapForCarriage:" destination="BYZ-38-t0r" id="hGf-0P-aPh"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="Tkh-bN-SLN" userLabel="Penthouse Floor-Tap Gester Recognizer"/>
+                <tapGestureRecognizer id="Q8T-cK-jcN" userLabel="Third-Floor Tap Gesture Recognizer"/>
+                <tapGestureRecognizer id="eaV-PX-F8s" userLabel="Second-Floor Tap Gesture Recognizer"/>
+                <tapGestureRecognizer id="cH9-aU-4AJ" userLabel="Third-Floor Tap Gesture Recognizer"/>
+                <tapGestureRecognizer id="L87-79-dpc" userLabel="Ground-Floor Tap Gesture Recognizer"/>
             </objects>
             <point key="canvasLocation" x="240" y="338"/>
         </scene>

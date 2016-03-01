@@ -50,15 +50,11 @@ class  BuildingViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         originalLeftCarriagePanelFrame = CGRectZero; originalRightCarriagePanelFrame = CGRectZero
-        super.init(coder: aDecoder)
-    }
-    
-    // -----------------------------------------------------------------------------------------------------
-    
-    override func viewDidLayoutSubviews() {
         originalLeftCarriagePanelFrame = CGRect(x: 0, y: 0, width: 30, height: 60)
         originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
+        super.init(coder: aDecoder)
     }
+
     
     // -----------------------------------------------------------------------------------------------------
     // MARK: - Action methods
@@ -119,12 +115,20 @@ class  BuildingViewController: UIViewController {
 
 extension BuildingViewController {
     
-    func resetElevators() {
+    func resetElevators(animate:Bool = true) {
         
         var myCenter = self.carriageA.center
         myCenter.y = FloorPosition.ground.rawValue
         
-        UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+        var myPanelDuration:NSTimeInterval = 0.0
+        var myDuration:NSTimeInterval = 0.0
+        
+        if animate {
+            myPanelDuration = BuildingViewController.myPanelDuration
+            myDuration = BuildingViewController.myDuration
+        }
+        
+        UIView.animateWithDuration(myPanelDuration, animations: {
             self.leftCarriagePanelA.frame = self.originalLeftCarriagePanelFrame
             self.rightCarriagePanelA.frame = self.originalRightCarriagePanelFrame
             self.leftCarriagePanelB.frame = self.originalLeftCarriagePanelFrame
@@ -135,7 +139,7 @@ extension BuildingViewController {
             self.rightCarriagePanelD.frame = self.originalRightCarriagePanelFrame
             
         }) { (shit) in
-            UIView.animateWithDuration(BuildingViewController.myDuration, animations: {
+            UIView.animateWithDuration(myDuration, animations: {
                 self.carriageA.center = myCenter
                 
                 myCenter = self.carriageB.center

@@ -15,6 +15,7 @@
                         <viewControllerLayoutGuide type="bottom" id="L7U-9d-bGE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xwB-XC-fQR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLk-il-N7s">
@@ -236,7 +237,9 @@
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="uhH-Ax-KXC" firstAttribute="height" secondItem="etP-Xr-JPV" secondAttribute="height" id="A6v-OQ-mPw"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uhH-Ax-KXC" secondAttribute="trailing" constant="1" id="Jbi-Lw-WSX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="uhH-Ax-KXC" secondAttribute="trailing" constant="1" id="Jbi-Lw-WSX">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                                    </constraint>
                                                     <constraint firstAttribute="height" constant="60" id="KWF-yU-BPc"/>
                                                     <constraint firstItem="etP-Xr-JPV" firstAttribute="leading" secondItem="xln-4f-ptF" secondAttribute="leading" id="Nd5-YL-Wsq"/>
                                                     <constraint firstItem="uhH-Ax-KXC" firstAttribute="width" secondItem="etP-Xr-JPV" secondAttribute="width" id="Wfv-EZ-eTP"/>
@@ -281,7 +284,9 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="xln-4f-ptF" secondAttribute="bottom" constant="59" id="QPa-Ty-a73"/>
+                                            <constraint firstAttribute="bottom" secondItem="xln-4f-ptF" secondAttribute="bottom" constant="59" id="QPa-Ty-a73">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                            </constraint>
                                             <constraint firstItem="xln-4f-ptF" firstAttribute="leading" secondItem="tGT-YB-7mn" secondAttribute="leading" id="XRK-Xm-5Pi"/>
                                             <constraint firstAttribute="trailing" secondItem="xln-4f-ptF" secondAttribute="trailing" constant="1" id="zG1-ca-pex">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -341,7 +346,9 @@
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="6W4-Ck-Uu4"/>
-                                                    <constraint firstAttribute="trailing" secondItem="6Je-Ah-V2K" secondAttribute="trailing" constant="1" id="971-OY-ArS"/>
+                                                    <constraint firstAttribute="trailing" secondItem="6Je-Ah-V2K" secondAttribute="trailing" constant="1" id="971-OY-ArS">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                                    </constraint>
                                                     <constraint firstItem="6Je-Ah-V2K" firstAttribute="width" secondItem="oZ7-os-lgE" secondAttribute="width" id="PM3-Ed-NtK"/>
                                                     <constraint firstItem="6Je-Ah-V2K" firstAttribute="top" secondItem="tdH-1I-0sr" secondAttribute="top" id="SRX-OX-Dsr"/>
                                                     <constraint firstItem="6Je-Ah-V2K" firstAttribute="height" secondItem="oZ7-os-lgE" secondAttribute="height" id="Xtl-0h-9X8"/>
@@ -386,8 +393,12 @@
                                             <constraint firstAttribute="trailing" secondItem="tdH-1I-0sr" secondAttribute="trailing" constant="1" id="KXj-hb-hRT">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
-                                            <constraint firstItem="tdH-1I-0sr" firstAttribute="leading" secondItem="vRh-Dt-92a" secondAttribute="leading" constant="0.5" id="LtU-7Z-SRg"/>
-                                            <constraint firstAttribute="bottom" secondItem="tdH-1I-0sr" secondAttribute="bottom" constant="177" id="bbL-b1-vjm"/>
+                                            <constraint firstItem="tdH-1I-0sr" firstAttribute="leading" secondItem="vRh-Dt-92a" secondAttribute="leading" constant="0.5" id="LtU-7Z-SRg">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                            </constraint>
+                                            <constraint firstAttribute="bottom" secondItem="tdH-1I-0sr" secondAttribute="bottom" constant="177" id="bbL-b1-vjm">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-VG-0Kf" userLabel="Elevator C">
@@ -449,7 +460,7 @@
                                                     <constraint firstItem="F7e-fY-3Mo" firstAttribute="top" secondItem="RAa-Jp-EjK" secondAttribute="top" id="oOA-CJ-Hg9"/>
                                                     <constraint firstItem="bs3-ce-UDJ" firstAttribute="top" secondItem="RAa-Jp-EjK" secondAttribute="top" id="qaV-f1-Fsy"/>
                                                     <constraint firstAttribute="trailing" secondItem="bs3-ce-UDJ" secondAttribute="trailing" constant="15.5" id="y7v-Hh-tHf">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                 </constraints>
                                                 <variation key="default">
@@ -487,7 +498,9 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.88184368609999997" blue="0.7205524445" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="RAa-Jp-EjK" secondAttribute="bottom" constant="177" id="2BR-1r-ANQ"/>
+                                            <constraint firstAttribute="bottom" secondItem="RAa-Jp-EjK" secondAttribute="bottom" constant="177" id="2BR-1r-ANQ">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                            </constraint>
                                             <constraint firstAttribute="trailing" secondItem="RAa-Jp-EjK" secondAttribute="trailing" constant="1.5" id="Pr2-9g-Knl">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
@@ -596,7 +609,9 @@
                                             <constraint firstAttribute="trailing" secondItem="9hD-La-7Ha" secondAttribute="trailing" constant="1.5" id="ZfT-RL-PEl">
                                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                             </constraint>
-                                            <constraint firstAttribute="bottom" secondItem="9hD-La-7Ha" secondAttribute="bottom" constant="177" id="wFX-vO-Ff6"/>
+                                            <constraint firstAttribute="bottom" secondItem="9hD-La-7Ha" secondAttribute="bottom" constant="177" id="wFX-vO-Ff6">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                                            </constraint>
                                         </constraints>
                                     </view>
                                 </subviews>

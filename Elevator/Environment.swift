@@ -24,6 +24,20 @@ enum FloorTag:Int {
     case second
     case third
     case penthouse
+    func desc() -> String {
+        switch self {
+        case .ground:
+            return "ground"
+        case .first:
+            return "first"
+        case .second:
+            return "second"
+        case .third:
+            return "third"
+        case .penthouse:
+            return "penthouse"
+        }
+    }
 }
 
 enum CarriageTag:Int {

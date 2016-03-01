@@ -66,6 +66,11 @@ class  BuildingViewController: UIViewController {
     }
     
     // -----------------------------------------------------------------------------------------------------
+    // MARK: -  Carriage Actions
+    
+    
+    // -----------------------------------------------------------------------------------------------------
+    // MARK: - Action methods
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
         
@@ -112,24 +117,8 @@ class  BuildingViewController: UIViewController {
     
     @IBAction func handleTapForFloors(sender: UITapGestureRecognizer) {
         if let floor = FloorTag(rawValue: sender.view!.tag) {
-            switch floor {
-            case .ground:
-                print("Ground Floor")
-                
-            case .first:
-                print("First Floor")
-                
-            case .second:
-                print("Second Floor")
-                
-            case .third:
-                print("Third Floor")
-                
-            case .penthouse:
-                showAlert(sender: self, withTitle: "Penthouse", withMessage: "Going Down", alertPurpose:.simple)
-                print("The Penthouse")
-                
-            }
+            let floorString = floor.desc()
+            NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:floorString)
         }
     }
 }
@@ -189,7 +178,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelA.frame = leftFrame
                 self.rightCarriagePanelA.frame = rightFrame
-                self.elevatorA.floorCheck(FloorPosition.penthouse)
+                self.elevatorA.check(FloorPosition.penthouse)
             })
             
         }
@@ -212,7 +201,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelB.frame = leftFrame
                 self.rightCarriagePanelB.frame = rightFrame
-                self.elevatorB.floorCheck(FloorPosition.third)
+                self.elevatorB.check(FloorPosition.third)
             })
         }
     }
@@ -233,7 +222,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelC.frame = leftFrame
                 self.rightCarriagePanelC.frame = rightFrame
-                self.elevatorC.floorCheck(FloorPosition.second)
+                self.elevatorC.check(FloorPosition.second)
             })
         }
     }
@@ -251,7 +240,7 @@ extension BuildingViewController {
             myCenter.y = FloorPosition.first.rawValue
             self.carriageD.center = myCenter
         }) {(shit) in
-            self.elevatorD.floorCheck(FloorPosition.first)
+            self.elevatorD.check(FloorPosition.first)
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelD.frame = leftFrame
                 self.rightCarriagePanelD.frame = rightFrame

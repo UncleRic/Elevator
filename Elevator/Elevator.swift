@@ -21,7 +21,7 @@ class Elevator:NSObject {
     convenience init(id:String) {
         self.init()
         self.id = id
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Elevator.handleRideRequest),
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Elevator.handleRideRequest(_:)),
                                                          name:kRideRequestNotification, object: nil)
     }
     
@@ -29,11 +29,29 @@ class Elevator:NSObject {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    func handleRideRequest() {
-        print("Handle Ride Request for id: \(id)")
+    // -----------------------------------------------------------------------------------------------------
+    
+    func handleRideRequest(notification:NSNotification) {
+        let destination = notification.object as? String
+        
+        if destination == "penthouse" {
+            
+        } else if destination == "third" {
+            
+        } else if destination == "second" {
+            
+        } else if destination == "first" {
+            
+        } else {
+            
+        }
+        
+        print("Handle Ride Request for id: \(id) to \(destination!)")
     }
     
-    func floorCheck(theFloor:FloorPosition) {
+    // -----------------------------------------------------------------------------------------------------
+    
+    func check(theFloor:FloorPosition) {
         switch theFloor {
             case .ground:
                 print("Carriage '\(id)' is on the ground floor.")

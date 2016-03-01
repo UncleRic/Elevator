@@ -27,15 +27,15 @@ enum FloorTag:Int {
     func desc() -> String {
         switch self {
         case .ground:
-            return "ground"
+            return "Ground Floor"
         case .first:
-            return "first"
+            return "First Floor"
         case .second:
-            return "second"
+            return "Second Floor"
         case .third:
-            return "third"
+            return "Third Floor"
         case .penthouse:
-            return "penthouse"
+            return "The Penthouse"
         }
     }
     func floorPosn() -> CGFloat {

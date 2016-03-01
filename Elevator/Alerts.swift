@@ -9,17 +9,7 @@ import UIKit
 
 enum AlertPurpose:Int {
     case simple // ...generic OK response.
-    case geoSetting
-    case createHashtag
-    case hashtagCreated
-    case timed
-    case login
-    case sendInventations
-    case startBliss
-    case noVideo
-    case missingProfileImage
-    case profileSaved
-    case settings
+    case floorButton
 }
 
 func showAlert(sender sender:UIViewController,
@@ -31,14 +21,28 @@ func showAlert(sender sender:UIViewController,
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
         alertController.view.tintColor = UIColor.greenColor()
         
-        if alertPurpose == .simple {
+        switch alertPurpose {
+        case .simple:
             var OKAction:UIAlertAction?
             OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
                 alertController.addAction(OKAction!)
             }
+            
+        case .floorButton:
+            var UpButton:UIAlertAction?
+            var DownButton:UIAlertAction?
+            UpButton = UIAlertAction(title: "Up", style: .Default) { (action) in
+                print("Alert: UpAction")
+            }
+            DownButton = UIAlertAction(title: "Down", style: .Default) { (action) in
+                print("Alert: DownAction")
+            }
+            alertController.addAction(UpButton!)
+            alertController.addAction(DownButton!)
         }
-    
+        
+        
         sender.presentViewController(alertController, animated: true, completion: nil)
-    
+        
     })
 }

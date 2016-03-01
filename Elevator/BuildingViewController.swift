@@ -103,9 +103,16 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     @IBAction func handleTapForFloors(sender: UITapGestureRecognizer) {
+        
         if let floor = FloorTag(rawValue: sender.view!.tag) {
-            let floorString = floor.desc()
-            NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:floorString)
+        let floorString = floor.desc()
+        showAlert(sender: self, withTitle: floorString, withMessage: "", alertPurpose:.floorButton)
+
+        
+        
+        
+            
+        //    NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:floorString)
         }
     }
 }

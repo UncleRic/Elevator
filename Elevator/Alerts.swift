@@ -15,11 +15,15 @@ enum AlertPurpose:Int {
 func showAlert(sender sender:UIViewController,
                       withTitle title:String,
                                 withMessage msg:String,
+                                            userInfo:[String:AnyObject]?,
                                             alertPurpose:AlertPurpose = .simple) {
     
     dispatch_async(dispatch_get_main_queue(), {
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
-        alertController.view.tintColor = UIColor.greenColor()
+        alertController.view.tintColor = UIColor.brownColor()
+        
+        var myUserInfo = userInfo
+        
         
         switch alertPurpose {
         case .simple:
@@ -31,18 +35,28 @@ func showAlert(sender sender:UIViewController,
         case .floorButton:
             var UpButton:UIAlertAction?
             var DownButton:UIAlertAction?
-            UpButton = UIAlertAction(title: "Up", style: .Default) { (action) in
-                print("Alert: UpAction")
+            
+
+            if let floorString = myUserInfo?[kDestinationFloor] as? String {
+                UpButton = UIAlertAction(title: "Up", style: .Default) { (action) in
+                    myUserInfo!["destination"] = "up"
+                    NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification,
+                        object:floorString,
+                        userInfo:myUserInfo)
+                    
+                }
+                
+                DownButton = UIAlertAction(title: "Down", style: .Default) { (action) in
+                    myUserInfo!["destination"] = "down"
+                    NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification,
+                        object:floorString,
+                        userInfo:myUserInfo)
+                }
+    
+                alertController.addAction(UpButton!)
+                alertController.addAction(DownButton!)
+                sender.presentViewController(alertController, animated: true, completion: nil)
             }
-            DownButton = UIAlertAction(title: "Down", style: .Default) { (action) in
-                print("Alert: DownAction")
-            }
-            alertController.addAction(UpButton!)
-            alertController.addAction(DownButton!)
         }
-        
-        
-        sender.presentViewController(alertController, animated: true, completion: nil)
-        
     })
 }

@@ -54,7 +54,7 @@ class  BuildingViewController: UIViewController {
         originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
         super.init(coder: aDecoder)
     }
-
+    
     
     // -----------------------------------------------------------------------------------------------------
     // MARK: - Action methods
@@ -105,14 +105,10 @@ class  BuildingViewController: UIViewController {
     @IBAction func handleTapForFloors(sender: UITapGestureRecognizer) {
         
         if let floor = FloorTag(rawValue: sender.view!.tag) {
-        let floorString = floor.desc()
-        showAlert(sender: self, withTitle: floorString, withMessage: "", alertPurpose:.floorButton)
-
-        
-        
-        
+            let floorString = floor.desc()
+            let infoDict:Dictionary = [kDestinationFloor:floorString]
             
-        //    NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:floorString)
+            showAlert(sender: self, withTitle: floorString, withMessage: "", userInfo:infoDict, alertPurpose:.floorButton)
         }
     }
 }

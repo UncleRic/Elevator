@@ -11,12 +11,18 @@ class CarriageView:UIView {
     var currentFloor:FloorTag = .ground
     var selectedFloors = [Int]()
     var isUpwardBound = false
+    var destinationStatus:CarriageStatus = .stationary
     var inTransit = false
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CarriageView.handleRideRequest(_:)),name:kRideRequestNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(CarriageView.handleRideRequest(_:)),
+                                                         name:kRideRequestNotification,
+                                                         object: nil)
     }
+    
+    // -----------------------------------------------------------------------------------------------------
     
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
@@ -27,28 +33,40 @@ class CarriageView:UIView {
     // It's here that the closest carriage path to floor is to to be determined; and hence which carriage to summon.
     
     func handleRideRequest(notification:NSNotification) {
-        if let destination = notification.object as? String {
-            
-            if destination == "penthouse" {
-                selectedFloors.append(FloorTag.penthouse.rawValue)
-            } else if destination == "third" {
-                selectedFloors.append(FloorTag.third.rawValue)
-            } else if destination == "second" {
-                selectedFloors.append(FloorTag.second.rawValue)
-            } else if destination == "first" {
-                selectedFloors.append(FloorTag.first.rawValue)
-            } else {
-                selectedFloors.append(FloorTag.ground.rawValue)
-            }
-            
-            if isUpwardBound {
-                selectedFloors = Array(Set(selectedFloors)).sort()
-            } else {
-                selectedFloors = Array(Set(selectedFloors)).sort{$0>$1}
-            }
-            
-            print("Handle Ride Request for id: \(self.tag) to \(destination): \(selectedFloors)")
+        
+        let myUserInfo = notification.userInfo
+        let destination = myUserInfo![kDestinationFloor] as! String
+        
+        switch destinationStatus {
+            case .upwardBound:
+                print("Upward Bound")
+            case .downwardBound:
+                print("Downward Bound")
+            default:
+                print("Stationary")
         }
+        
+    
+        if destination == "penthouse" {
+            selectedFloors.append(FloorTag.penthouse.rawValue)
+        } else if destination == "third" {
+            selectedFloors.append(FloorTag.third.rawValue)
+        } else if destination == "second" {
+            selectedFloors.append(FloorTag.second.rawValue)
+        } else if destination == "first" {
+            selectedFloors.append(FloorTag.first.rawValue)
+        } else {
+            selectedFloors.append(FloorTag.ground.rawValue)
+        }
+        
+        if isUpwardBound {
+            selectedFloors = Array(Set(selectedFloors)).sort()
+        } else {
+            selectedFloors = Array(Set(selectedFloors)).sort{$0>$1}
+        }
+        
+        print("Handle Ride Request for id: \(self.tag) to \(destination): \(selectedFloors)")
+        
     }
     
     // -----------------------------------------------------------------------------------------------------

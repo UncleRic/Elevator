@@ -9,6 +9,7 @@
 import UIKit
 
 let kRideRequestNotification = "RideRequest"
+let kDestinationFloor = "destinationFloor"
 
 enum FloorPosition:CGFloat {
     case penthouse = 30.0
@@ -59,4 +60,10 @@ enum CarriageTag:Int {
     case carriageBTag = 2
     case carriageCTag = 3
     case carriageDTag = 4
+}
+
+enum CarriageStatus:Int {
+    case stationary = 0
+    case upwardBound
+    case downwardBound
 }

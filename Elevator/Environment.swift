@@ -38,6 +38,20 @@ enum FloorTag:Int {
             return "penthouse"
         }
     }
+    func floorPosn() -> CGFloat {
+        switch self {
+        case .ground:
+            return FloorPosition.ground.rawValue
+        case .first:
+            return FloorPosition.first.rawValue
+        case .second:
+            return FloorPosition.second.rawValue
+        case .third:
+            return FloorPosition.third.rawValue
+        case .penthouse:
+            return FloorPosition.penthouse.rawValue
+        }
+    }
 }
 
 enum CarriageTag:Int {

@@ -61,20 +61,16 @@ class  BuildingViewController: UIViewController {
     }
     
     // -----------------------------------------------------------------------------------------------------
-    // MARK: -  Carriage Actions
-    
-    
-    // -----------------------------------------------------------------------------------------------------
     // MARK: - Action methods
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
         
         NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:nil)
         
-        animatecarriageA()
-        animatecarriageB()
-        animatecarriageC()
-        animatecarriageD()
+        animatecarriageA(.ground)
+        animatecarriageB(.penthouse)
+        animatecarriageC(.third)
+        animatecarriageD(.second)
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -159,7 +155,7 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animatecarriageA() {
+    func animatecarriageA(floorTag:FloorTag) {
         var leftFrame = self.leftCarriagePanelA.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelA.frame
@@ -167,7 +163,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageA.center
-            myCenter.y = FloorPosition.penthouse.rawValue
+            myCenter.y = floorTag.floorPosn()
             self.carriageA.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -182,7 +178,7 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animatecarriageB() {
+    func animatecarriageB(floorTag:FloorTag) {
         var leftFrame = self.leftCarriagePanelB.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelB.frame
@@ -190,7 +186,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageB.center
-            myCenter.y = FloorPosition.third.rawValue
+            myCenter.y = floorTag.floorPosn()
             self.carriageB.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -203,7 +199,7 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animatecarriageC() {
+    func animatecarriageC(floorTag:FloorTag) {
         var leftFrame = self.leftCarriagePanelC.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelC.frame
@@ -211,7 +207,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageC.center
-            myCenter.y = FloorPosition.second.rawValue
+            myCenter.y = floorTag.floorPosn()
             self.carriageC.center = myCenter
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -224,7 +220,7 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animatecarriageD() {
+    func animatecarriageD(floorTag:FloorTag) {
         var leftFrame = self.leftCarriagePanelD.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelD.frame
@@ -232,7 +228,7 @@ extension BuildingViewController {
         rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageD.center
-            myCenter.y = FloorPosition.first.rawValue
+            myCenter.y = floorTag.floorPosn()
             self.carriageD.center = myCenter
         }) {(shit) in
             self.carriageD.check(FloorPosition.first)

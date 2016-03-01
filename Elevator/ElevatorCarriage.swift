@@ -23,6 +23,8 @@ class CarriageView:UIView {
     }
     
     // -----------------------------------------------------------------------------------------------------
+    // Each of Carriage #1..#4 receives this notification.
+    // It's here that the closest carriage path to floor is to to be determined; and hence which carriage to summon.
     
     func handleRideRequest(notification:NSNotification) {
         let destination = notification.object as? String

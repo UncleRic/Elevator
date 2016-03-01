@@ -41,7 +41,11 @@ class CarriageView:UIView {
                 selectedFloors.append(FloorTag.ground.rawValue)
             }
             
-            selectedFloors = Array(Set(selectedFloors)).sort()
+            if isUpwardBound {
+                selectedFloors = Array(Set(selectedFloors)).sort()
+            } else {
+                selectedFloors = Array(Set(selectedFloors)).sort{$0>$1}
+            }
             
             print("Handle Ride Request for id: \(self.tag) to \(destination): \(selectedFloors)")
         }

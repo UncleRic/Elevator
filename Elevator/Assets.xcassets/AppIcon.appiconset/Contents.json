@@ -3,7 +3,7 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "ElevatorIcon-24@2x.png",
+      "filename" : "ElevatorIcon-29@2x.png",
       "scale" : "2x"
     },
     {
@@ -27,13 +27,13 @@
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "ElevatorIcon-60@2x.png",
+      "filename" : "ElevatorIcon-40@2x-1.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "ElevatorIcon-60@3x.png",
+      "filename" : "ElevatorIcon-40@3x-1.png",
       "scale" : "3x"
     }
   ],

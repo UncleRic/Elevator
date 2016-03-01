@@ -15,7 +15,7 @@ class CarriageView:UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CarriageView.handleRideRequest(_:)),name:kRideRequestNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CarriageView.handleRideRequest(_:)),name:kRideRequestNotification, object: nil)
     }
     
     deinit {
@@ -27,37 +27,40 @@ class CarriageView:UIView {
     // It's here that the closest carriage path to floor is to to be determined; and hence which carriage to summon.
     
     func handleRideRequest(notification:NSNotification) {
-        let destination = notification.object as? String
-        
-        if destination == "penthouse" {
+        if let destination = notification.object as? String {
             
-        } else if destination == "third" {
+            if destination == "penthouse" {
+                selectedFloors.append(FloorTag.penthouse.rawValue)
+            } else if destination == "third" {
+                selectedFloors.append(FloorTag.third.rawValue)
+            } else if destination == "second" {
+                selectedFloors.append(FloorTag.second.rawValue)
+            } else if destination == "first" {
+                selectedFloors.append(FloorTag.first.rawValue)
+            } else {
+                selectedFloors.append(FloorTag.ground.rawValue)
+            }
             
-        } else if destination == "second" {
+            selectedFloors = Array(Set(selectedFloors)).sort()
             
-        } else if destination == "first" {
-            
-        } else {
-            
+            print("Handle Ride Request for id: \(self.tag) to \(destination): \(selectedFloors)")
         }
-        
-        print("Handle Ride Request for id: \(self.tag) to \(destination!)")
     }
     
     // -----------------------------------------------------------------------------------------------------
     
     func check(theFloor:FloorPosition) {
         switch theFloor {
-            case .ground:
-                print("Carriage '\(self.tag)' is on the ground floor.")
-            case .first:
-                print("Carriage '\(self.tag)' is on the first floor.")
-            case .second:
-                print("Carriage '\(self.tag)' is on the second floor.")
-            case .third:
-                print("Carriage '\(self.tag)' is on the third floor.")
-            case .penthouse:
-                print("Carriage '\(self.tag)' is on the fourth floor.")
+        case .ground:
+            print("Carriage '\(self.tag)' is on the ground floor.")
+        case .first:
+            print("Carriage '\(self.tag)' is on the first floor.")
+        case .second:
+            print("Carriage '\(self.tag)' is on the second floor.")
+        case .third:
+            print("Carriage '\(self.tag)' is on the third floor.")
+        case .penthouse:
+            print("Carriage '\(self.tag)' is on the fourth floor.")
         }
     }
     

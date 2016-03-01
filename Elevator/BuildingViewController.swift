@@ -60,8 +60,8 @@ class  BuildingViewController: UIViewController {
     // MARK: - Action methods
     
     @IBAction func animateAction(sender: UIBarButtonItem) {
-        
-        NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:nil)
+        let infoDict = RideRequestDict()
+        NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:nil, userInfo:infoDict)
         
         animatecarriageA(.ground)
         animatecarriageB(.penthouse)

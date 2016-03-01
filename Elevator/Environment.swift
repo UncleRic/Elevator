@@ -11,6 +11,8 @@ import UIKit
 let kRideRequestNotification = "RideRequest"
 let kDestinationFloor = "destinationFloor"
 
+typealias RideRequestDict = [String:AnyObject]
+
 enum FloorPosition:CGFloat {
     case penthouse = 30.0
     case third = 140.0

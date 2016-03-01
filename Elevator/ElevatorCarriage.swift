@@ -35,7 +35,7 @@ class CarriageView:UIView {
     func handleRideRequest(notification:NSNotification) {
         
         let myUserInfo = notification.userInfo
-        let destination = myUserInfo![kDestinationFloor] as! String
+        let destination = myUserInfo![kDestinationFloor] as? String
         
         switch destinationStatus {
             case .upwardBound:

@@ -12,7 +12,7 @@
 		184A62A71C7CEC9300BBC747 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A62A51C7CEC9300BBC747 /* Main.storyboard */; };
 		184A62A91C7CEC9300BBC747 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 184A62A81C7CEC9300BBC747 /* Assets.xcassets */; };
 		184A62AC1C7CEC9300BBC747 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 184A62AA1C7CEC9300BBC747 /* LaunchScreen.storyboard */; };
-		184A62B41C7CECB700BBC747 /* Elevator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A62B31C7CECB700BBC747 /* Elevator.swift */; };
+		184A62B41C7CECB700BBC747 /* ElevatorCarriage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184A62B31C7CECB700BBC747 /* ElevatorCarriage.swift */; };
 		18A6FFE61C84EC4F0030028A /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A6FFE51C84EC4F0030028A /* Alerts.swift */; };
 		18CB654D1C84E703007311E2 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB654C1C84E703007311E2 /* Environment.swift */; };
 /* End PBXBuildFile section */
@@ -25,7 +25,7 @@
 		184A62A81C7CEC9300BBC747 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		184A62AB1C7CEC9300BBC747 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		184A62AD1C7CEC9300BBC747 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		184A62B31C7CECB700BBC747 /* Elevator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Elevator.swift; sourceTree = "<group>"; };
+		184A62B31C7CECB700BBC747 /* ElevatorCarriage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElevatorCarriage.swift; sourceTree = "<group>"; };
 		18A6FFE51C84EC4F0030028A /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		18CB654C1C84E703007311E2 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				184A62A11C7CEC9300BBC747 /* AppDelegate.swift */,
-				184A62B31C7CECB700BBC747 /* Elevator.swift */,
+				184A62B31C7CECB700BBC747 /* ElevatorCarriage.swift */,
 				184A62A31C7CEC9300BBC747 /* BuildingViewController.swift */,
 				18A6FFE51C84EC4F0030028A /* Alerts.swift */,
 				18CB654C1C84E703007311E2 /* Environment.swift */,
@@ -148,7 +148,7 @@
 				18A6FFE61C84EC4F0030028A /* Alerts.swift in Sources */,
 				18CB654D1C84E703007311E2 /* Environment.swift in Sources */,
 				184A62A21C7CEC9300BBC747 /* AppDelegate.swift in Sources */,
-				184A62B41C7CECB700BBC747 /* Elevator.swift in Sources */,
+				184A62B41C7CECB700BBC747 /* ElevatorCarriage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,28 +1,21 @@
-//  Elevator.swift
-//  Elevator
+//  ElevatorCarriage.swift
 //
 //  Created by Frederick C. Lee on 2/23/16.
 //  Copyright © 2016 Swift International. All rights reserved.
 // -----------------------------------------------------------------------------------------------------
 
 import Foundation
+import UIKit
 
-class Elevator:NSObject {
-    var id = "A"
+class CarriageView:UIView {
     var currentFloor:FloorTag = .ground
     var selectedFloors = [Int]()
     var isUpwardBound = false
     var inTransit = false
     
-    override init() {
-        super.init()
-    }
-    
-    convenience init(id:String) {
-        self.init()
-        self.id = id
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Elevator.handleRideRequest(_:)),
-                                                         name:kRideRequestNotification, object: nil)
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CarriageView.handleRideRequest(_:)),name:kRideRequestNotification, object: nil)
     }
     
     deinit {
@@ -46,7 +39,7 @@ class Elevator:NSObject {
             
         }
         
-        print("Handle Ride Request for id: \(id) to \(destination!)")
+        print("Handle Ride Request for id: \(self.tag) to \(destination!)")
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -54,15 +47,15 @@ class Elevator:NSObject {
     func check(theFloor:FloorPosition) {
         switch theFloor {
             case .ground:
-                print("Carriage '\(id)' is on the ground floor.")
+                print("Carriage '\(self.tag)' is on the ground floor.")
             case .first:
-                print("Carriage '\(id)' is on the first floor.")
+                print("Carriage '\(self.tag)' is on the first floor.")
             case .second:
-                print("Carriage '\(id)' is on the second floor.")
+                print("Carriage '\(self.tag)' is on the second floor.")
             case .third:
-                print("Carriage '\(id)' is on the third floor.")
+                print("Carriage '\(self.tag)' is on the third floor.")
             case .penthouse:
-                print("Carriage '\(id)' is on the fourth floor.")
+                print("Carriage '\(self.tag)' is on the fourth floor.")
         }
     }
     

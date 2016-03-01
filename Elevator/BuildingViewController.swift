@@ -18,22 +18,22 @@ class  BuildingViewController: UIViewController {
     @IBOutlet weak var penthouseFloor: UIView!
     
     // Elevator Carriage A:
-    @IBOutlet weak var carriageA: UIView!
+    @IBOutlet weak var carriageA: CarriageView!
     @IBOutlet weak var leftCarriagePanelA: UIView!
     @IBOutlet weak var rightCarriagePanelA: UIView!
     
     // Elevator Carriage B:
-    @IBOutlet weak var carriageB: UIView!
+    @IBOutlet weak var carriageB: CarriageView!
     @IBOutlet weak var leftCarriagePanelB: UIView!
     @IBOutlet weak var rightCarriagePanelB: UIView!
     
     // Elevator Carriage C:
-    @IBOutlet weak var carriageC: UIView!
+    @IBOutlet weak var carriageC: CarriageView!
     @IBOutlet weak var leftCarriagePanelC: UIView!
     @IBOutlet weak var rightCarriagePanelC: UIView!
     
     // Elevator Carriage D:
-    @IBOutlet weak var carriageD: UIView!
+    @IBOutlet weak var carriageD: CarriageView!
     @IBOutlet weak var leftCarriagePanelD: UIView!
     @IBOutlet weak var rightCarriagePanelD: UIView!
     
@@ -45,11 +45,6 @@ class  BuildingViewController: UIViewController {
     
     static let myDuration:NSTimeInterval = 3.0
     static let myPanelDuration:NSTimeInterval = 1.0
-    
-    let elevatorA = Elevator(id: "A")
-    let elevatorB = Elevator(id: "B")
-    let elevatorC = Elevator(id: "C")
-    let elevatorD = Elevator(id: "D")
     
     var originalLeftCarriagePanelFrame:CGRect; var originalRightCarriagePanelFrame:CGRect
     
@@ -76,10 +71,10 @@ class  BuildingViewController: UIViewController {
         
         NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:nil)
         
-        animateElevatorA()
-        animateElevatorB()
-        animateElevatorC()
-        animateElevatorD()
+        animatecarriageA()
+        animatecarriageB()
+        animatecarriageC()
+        animatecarriageD()
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -164,7 +159,7 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animateElevatorA() {
+    func animatecarriageA() {
         var leftFrame = self.leftCarriagePanelA.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelA.frame
@@ -178,7 +173,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelA.frame = leftFrame
                 self.rightCarriagePanelA.frame = rightFrame
-                self.elevatorA.check(FloorPosition.penthouse)
+                self.carriageA.check(FloorPosition.penthouse)
             })
             
         }
@@ -187,7 +182,7 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animateElevatorB() {
+    func animatecarriageB() {
         var leftFrame = self.leftCarriagePanelB.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelB.frame
@@ -201,14 +196,14 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelB.frame = leftFrame
                 self.rightCarriagePanelB.frame = rightFrame
-                self.elevatorB.check(FloorPosition.third)
+                self.carriageB.check(FloorPosition.third)
             })
         }
     }
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animateElevatorC() {
+    func animatecarriageC() {
         var leftFrame = self.leftCarriagePanelC.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelC.frame
@@ -222,14 +217,14 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelC.frame = leftFrame
                 self.rightCarriagePanelC.frame = rightFrame
-                self.elevatorC.check(FloorPosition.second)
+                self.carriageC.check(FloorPosition.second)
             })
         }
     }
     
     // -----------------------------------------------------------------------------------------------------
     
-    func animateElevatorD() {
+    func animatecarriageD() {
         var leftFrame = self.leftCarriagePanelD.frame
         leftFrame.size.width = 4
         var rightFrame = self.rightCarriagePanelD.frame
@@ -240,7 +235,7 @@ extension BuildingViewController {
             myCenter.y = FloorPosition.first.rawValue
             self.carriageD.center = myCenter
         }) {(shit) in
-            self.elevatorD.check(FloorPosition.first)
+            self.carriageD.check(FloorPosition.first)
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.leftCarriagePanelD.frame = leftFrame
                 self.rightCarriagePanelD.frame = rightFrame

@@ -63,46 +63,45 @@
                                     <rect key="frame" x="135" y="53" width="131" height="21"/>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-mw-Kpg" userLabel="Ground Floor">
+                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-pp-Bpu" userLabel="Penthouse">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="rgW-kb-OwZ"/>
+                                    <constraint firstAttribute="height" constant="60" id="4sC-Kv-SSN"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="rgW-kb-OwZ"/>
+                                        <exclude reference="4sC-Kv-SSN"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="rgW-kb-OwZ"/>
+                                        <include reference="4sC-Kv-SSN"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="L87-79-dpc" appends="YES" id="tQl-zg-yCo"/>
+                                    <outletCollection property="gestureRecognizers" destination="Tkh-bN-SLN" appends="YES" id="Vsf-OC-teZ"/>
                                 </connections>
                             </view>
-                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-8P-IV0" userLabel="First-Floor">
+                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-LT-w1P" userLabel="Third Floor">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="MZP-Kc-Gpa"/>
+                                    <constraint firstAttribute="height" constant="60" id="725-Ti-OXz"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="MZP-Kc-Gpa"/>
+                                        <exclude reference="725-Ti-OXz"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="MZP-Kc-Gpa"/>
+                                        <include reference="725-Ti-OXz"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="cH9-aU-4AJ" appends="YES" id="j0s-yl-gU6"/>
+                                    <outletCollection property="gestureRecognizers" destination="Q8T-cK-jcN" appends="YES" id="7Hk-7w-Mjv"/>
                                 </connections>
                             </view>
                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GH0-Y7-XJ1" userLabel="Second Floor">
@@ -128,45 +127,46 @@
                                     <outletCollection property="gestureRecognizers" destination="eaV-PX-F8s" appends="YES" id="Q3a-wG-869"/>
                                 </connections>
                             </view>
-                            <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p8s-LT-w1P" userLabel="Third Floor">
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kbb-8P-IV0" userLabel="First-Floor">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="725-Ti-OXz"/>
+                                    <constraint firstAttribute="height" constant="60" id="MZP-Kc-Gpa"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="725-Ti-OXz"/>
+                                        <exclude reference="MZP-Kc-Gpa"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="725-Ti-OXz"/>
+                                        <include reference="MZP-Kc-Gpa"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Q8T-cK-jcN" appends="YES" id="7Hk-7w-Mjv"/>
+                                    <outletCollection property="gestureRecognizers" destination="cH9-aU-4AJ" appends="YES" id="j0s-yl-gU6"/>
                                 </connections>
                             </view>
-                            <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-pp-Bpu" userLabel="Penthouse">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cuB-mw-Kpg" userLabel="Ground Floor">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="4sC-Kv-SSN"/>
+                                    <constraint firstAttribute="height" constant="60" id="rgW-kb-OwZ"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="4sC-Kv-SSN"/>
+                                        <exclude reference="rgW-kb-OwZ"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
-                                        <include reference="4sC-Kv-SSN"/>
+                                        <include reference="rgW-kb-OwZ"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Tkh-bN-SLN" appends="YES" id="Vsf-OC-teZ"/>
+                                    <outletCollection property="gestureRecognizers" destination="L87-79-dpc" appends="YES" id="tQl-zg-yCo"/>
                                 </connections>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OaF-gt-xzS" userLabel="Elevator Stack">
@@ -657,7 +657,7 @@
                             <constraint firstItem="OaF-gt-xzS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="81" id="SdJ-gO-2ZA"/>
                             <constraint firstItem="p8s-LT-w1P" firstAttribute="trailing" secondItem="GH0-Y7-XJ1" secondAttribute="trailing" id="YPX-0J-WdQ"/>
                             <constraint firstItem="p8s-LT-w1P" firstAttribute="top" secondItem="GH0-Y7-XJ1" secondAttribute="top" id="Zux-Mf-D5X">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-90"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="-72"/>
                             </constraint>
                             <constraint firstItem="GH0-Y7-XJ1" firstAttribute="leading" secondItem="Kbb-8P-IV0" secondAttribute="leading" id="fr6-J6-uU3"/>
                             <constraint firstItem="ydZ-pp-Bpu" firstAttribute="trailing" secondItem="p8s-LT-w1P" secondAttribute="trailing" id="hGf-o8-0no"/>
@@ -669,7 +669,9 @@
                             <constraint firstItem="cuB-mw-Kpg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="nwC-Ff-Wyl">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="cuB-mw-Kpg" firstAttribute="top" secondItem="Kbb-8P-IV0" secondAttribute="bottom" constant="59" id="otr-cA-Wsu"/>
+                            <constraint firstItem="cuB-mw-Kpg" firstAttribute="top" secondItem="Kbb-8P-IV0" secondAttribute="bottom" constant="59" id="otr-cA-Wsu">
+                                <variation key="heightClass=regular-widthClass=compact" constant="36"/>
+                            </constraint>
                             <constraint firstItem="ydZ-pp-Bpu" firstAttribute="top" secondItem="TEc-pe-wCh" secondAttribute="bottom" constant="27" id="que-nE-7rd"/>
                             <constraint firstItem="Zbu-Un-hrP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="tKf-We-y7z"/>
                             <constraint firstItem="cuB-mw-Kpg" firstAttribute="height" secondItem="ydZ-pp-Bpu" secondAttribute="height" id="whc-RG-2iF"/>
@@ -677,11 +679,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="cuB-mw-Kpg"/>
-                                <exclude reference="Kbb-8P-IV0"/>
-                                <exclude reference="GH0-Y7-XJ1"/>
-                                <exclude reference="p8s-LT-w1P"/>
                                 <exclude reference="ydZ-pp-Bpu"/>
+                                <exclude reference="p8s-LT-w1P"/>
+                                <exclude reference="GH0-Y7-XJ1"/>
+                                <exclude reference="Kbb-8P-IV0"/>
+                                <exclude reference="cuB-mw-Kpg"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="0mv-c4-DqK"/>
@@ -707,11 +709,11 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="cuB-mw-Kpg"/>
-                                <include reference="Kbb-8P-IV0"/>
-                                <include reference="GH0-Y7-XJ1"/>
-                                <include reference="p8s-LT-w1P"/>
                                 <include reference="ydZ-pp-Bpu"/>
+                                <include reference="p8s-LT-w1P"/>
+                                <include reference="GH0-Y7-XJ1"/>
+                                <include reference="Kbb-8P-IV0"/>
+                                <include reference="cuB-mw-Kpg"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="0mv-c4-DqK"/>

@@ -15,10 +15,10 @@ typealias RideRequestDict = [String:AnyObject]
 
 enum FloorPosition:CGFloat {
     case penthouse = 30.0
-    case third = 140.0
-    case second = 230.0
-    case first = 334.0
-    case ground = 452.0
+    case third = 109.0
+    case second = 181.0
+    case first = 257.0
+    case ground = 354.0
 }
 
 enum FloorTag:Int {

@@ -11,6 +11,7 @@ class  BuildingViewController: UIViewController {
     @IBOutlet weak var ricLabel: UILabel!
     @IBOutlet weak var ricLabelConstraint: NSLayoutConstraint!
     
+    // Floors:
     @IBOutlet weak var groundFloor: UIView!
     @IBOutlet weak var firstFloor: UIView!
     @IBOutlet weak var secondFloor: UIView!
@@ -54,7 +55,6 @@ class  BuildingViewController: UIViewController {
         originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
         super.init(coder: aDecoder)
     }
-    
     
     // -----------------------------------------------------------------------------------------------------
     // MARK: - Action methods
@@ -121,7 +121,7 @@ extension BuildingViewController {
     func resetElevators(animate:Bool = true) {
         
         var myCenter = self.carriageA.center
-        myCenter.y = FloorPosition.ground.rawValue
+        myCenter.y = FloorPosition.penthouse.rawValue
         
         var myPanelDuration:NSTimeInterval = 0.0
         var myDuration:NSTimeInterval = 0.0

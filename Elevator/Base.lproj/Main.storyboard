@@ -720,13 +720,13 @@
                                 <include reference="MgM-ep-03b"/>
                                 <include reference="fr6-J6-uU3"/>
                                 <include reference="iXX-m5-JTn"/>
-                                <include reference="lO9-yf-6JI"/>
+                                <exclude reference="lO9-yf-6JI"/>
                                 <include reference="lux-Fh-Kgg"/>
                                 <include reference="Nt5-nd-h1d"/>
                                 <include reference="nwC-Ff-Wyl"/>
                                 <include reference="otr-cA-Wsu"/>
-                                <include reference="whc-RG-2iF"/>
-                                <include reference="BsS-tX-S39"/>
+                                <exclude reference="whc-RG-2iF"/>
+                                <exclude reference="BsS-tX-S39"/>
                                 <include reference="OYM-Mf-vm2"/>
                                 <include reference="YPX-0J-WdQ"/>
                                 <include reference="Zux-Mf-D5X"/>

@@ -20,24 +20,27 @@ class  BuildingViewController: UIViewController {
     
     // Elevator Carriage A:
     @IBOutlet weak var carriageA: CarriageView!
-    @IBOutlet weak var leftCarriagePanelA: UIView!
-    @IBOutlet weak var rightCarriagePanelA: UIView!
+    
+    @IBOutlet weak var leftPanelAConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightPanelAConstraint: NSLayoutConstraint!
     
     // Elevator Carriage B:
     @IBOutlet weak var carriageB: CarriageView!
-    @IBOutlet weak var leftCarriagePanelB: UIView!
-    @IBOutlet weak var rightCarriagePanelB: UIView!
+    @IBOutlet weak var leftPanelBConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightPanelBConstraint: NSLayoutConstraint!
+    
     
     // Elevator Carriage C:
     @IBOutlet weak var carriageC: CarriageView!
-    @IBOutlet weak var leftCarriagePanelC: UIView!
-    @IBOutlet weak var rightCarriagePanelC: UIView!
+    @IBOutlet weak var leftPanelCConstraint: NSLayoutConstraint!
+    @IBOutlet weak var rightPanelCConstraint: NSLayoutConstraint!
+    
     
     // Elevator Carriage D:
     @IBOutlet weak var carriageD: CarriageView!
-    @IBOutlet weak var leftCarriagePanelD: UIView!
-    @IBOutlet weak var rightCarriagePanelD: UIView!
+    @IBOutlet weak var leftPanelDConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var rightPanelDConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var carriageABottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var carriageBBottomConstraint: NSLayoutConstraint!
@@ -47,13 +50,21 @@ class  BuildingViewController: UIViewController {
     static let myDuration:NSTimeInterval = 3.0
     static let myPanelDuration:NSTimeInterval = 1.0
     
-    var originalLeftCarriagePanelFrame:CGRect; var originalRightCarriagePanelFrame:CGRect
+    
+    var carriageADoorConstraints = [NSLayoutConstraint]()
+    var carriageBDoorConstraints = [NSLayoutConstraint]()
+    var carriageCDoorConstraints = [NSLayoutConstraint]()
+    var carriageDDoorConstraints = [NSLayoutConstraint]()
     
     required init?(coder aDecoder: NSCoder) {
-        originalLeftCarriagePanelFrame = CGRectZero; originalRightCarriagePanelFrame = CGRectZero
-        originalLeftCarriagePanelFrame = CGRect(x: 0, y: 0, width: 30, height: 60)
-        originalRightCarriagePanelFrame = CGRect(x: 30, y: 0, width: 30, height: 60)
         super.init(coder: aDecoder)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        carriageADoorConstraints = [leftPanelAConstraint, rightPanelBConstraint]
+        carriageBDoorConstraints = [leftPanelBConstraint, rightPanelBConstraint]
+        carriageCDoorConstraints = [leftPanelCConstraint, rightPanelCConstraint]
+        carriageDDoorConstraints = [leftPanelDConstraint, rightPanelDConstraint]
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -132,15 +143,11 @@ extension BuildingViewController {
         }
         
         UIView.animateWithDuration(myPanelDuration, animations: {
-            self.leftCarriagePanelA.frame = self.originalLeftCarriagePanelFrame
-            self.rightCarriagePanelA.frame = self.originalRightCarriagePanelFrame
-            self.leftCarriagePanelB.frame = self.originalLeftCarriagePanelFrame
-            self.rightCarriagePanelB.frame = self.originalRightCarriagePanelFrame
-            self.leftCarriagePanelC.frame = self.originalLeftCarriagePanelFrame
-            self.rightCarriagePanelC.frame = self.originalRightCarriagePanelFrame
-            self.leftCarriagePanelD.frame = self.originalLeftCarriagePanelFrame
-            self.rightCarriagePanelD.frame = self.originalRightCarriagePanelFrame
-            
+            NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
+            NSLayoutConstraint.activateConstraints(self.carriageBDoorConstraints)
+            NSLayoutConstraint.activateConstraints(self.carriageCDoorConstraints)
+            NSLayoutConstraint.activateConstraints(self.carriageDDoorConstraints)
+            self.view.layoutIfNeeded()
         }) { (shit) in
             UIView.animateWithDuration(myDuration, animations: {
                 self.carriageA.center = myCenter
@@ -163,19 +170,21 @@ extension BuildingViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func animatecarriageA(floorTag:FloorTag) {
-        var leftFrame = self.leftCarriagePanelA.frame
-        leftFrame.size.width = 4
-        var rightFrame = self.rightCarriagePanelA.frame
-        rightFrame.origin.x = 54
-        rightFrame.size.width = 4
+        
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageA.center
             myCenter.y = floorTag.floorPosn()
             self.carriageA.center = myCenter
+            if self.carriageADoorConstraints[0].active {
+                NSLayoutConstraint.deactivateConstraints(self.carriageADoorConstraints)
+            } else {
+                NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
+            }
+            self.view.layoutIfNeeded()
+            
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                self.leftCarriagePanelA.frame = leftFrame
-                self.rightCarriagePanelA.frame = rightFrame
+                
                 self.carriageA.check(FloorPosition.penthouse)
             })
             
@@ -186,19 +195,20 @@ extension BuildingViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func animatecarriageB(floorTag:FloorTag) {
-        var leftFrame = self.leftCarriagePanelB.frame
-        leftFrame.size.width = 4
-        var rightFrame = self.rightCarriagePanelB.frame
-        rightFrame.origin.x = 54
-        rightFrame.size.width = 4
+        
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageB.center
             myCenter.y = floorTag.floorPosn()
             self.carriageB.center = myCenter
+            if self.carriageBDoorConstraints[0].active {
+                NSLayoutConstraint.deactivateConstraints(self.carriageBDoorConstraints)
+            } else {
+                NSLayoutConstraint.activateConstraints(self.carriageBDoorConstraints)
+            }
+            self.view.layoutIfNeeded()
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                self.leftCarriagePanelB.frame = leftFrame
-                self.rightCarriagePanelB.frame = rightFrame
+                
                 self.carriageB.check(FloorPosition.third)
             })
         }
@@ -207,19 +217,20 @@ extension BuildingViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func animatecarriageC(floorTag:FloorTag) {
-        var leftFrame = self.leftCarriagePanelC.frame
-        leftFrame.size.width = 4
-        var rightFrame = self.rightCarriagePanelC.frame
-        rightFrame.origin.x = 54
-        rightFrame.size.width = 4
+        
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageC.center
             myCenter.y = floorTag.floorPosn()
             self.carriageC.center = myCenter
+            if self.carriageCDoorConstraints[0].active {
+                NSLayoutConstraint.deactivateConstraints(self.carriageCDoorConstraints)
+            } else {
+                NSLayoutConstraint.activateConstraints(self.carriageCDoorConstraints)
+            }
+            self.view.layoutIfNeeded()
         }) {(shit) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                self.leftCarriagePanelC.frame = leftFrame
-                self.rightCarriagePanelC.frame = rightFrame
+                
                 self.carriageC.check(FloorPosition.second)
             })
         }
@@ -228,20 +239,20 @@ extension BuildingViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func animatecarriageD(floorTag:FloorTag) {
-        var leftFrame = self.leftCarriagePanelD.frame
-        leftFrame.size.width = 4
-        var rightFrame = self.rightCarriagePanelD.frame
-        rightFrame.origin.x = 54
-        rightFrame.size.width = 4
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageD.center
             myCenter.y = floorTag.floorPosn()
             self.carriageD.center = myCenter
+            if self.carriageDDoorConstraints[0].active {
+                NSLayoutConstraint.deactivateConstraints(self.carriageDDoorConstraints)
+            } else {
+                NSLayoutConstraint.activateConstraints(self.carriageDDoorConstraints)
+            }
+            self.view.layoutIfNeeded()
         }) {(shit) in
             self.carriageD.check(FloorPosition.first)
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                self.leftCarriagePanelD.frame = leftFrame
-                self.rightCarriagePanelD.frame = rightFrame
+                
             })
         }
     }

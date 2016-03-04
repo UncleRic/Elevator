@@ -294,14 +294,14 @@
                                                         <exclude reference="6Je-Ah-V2K"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="R1g-AM-uhV"/>
-                                                        <exclude reference="adY-2x-00a"/>
-                                                        <exclude reference="e7u-Rn-tVC"/>
-                                                        <exclude reference="wRF-aI-VyT"/>
                                                         <exclude reference="971-OY-ArS"/>
                                                         <exclude reference="AK5-rL-VrW"/>
                                                         <exclude reference="SRX-OX-Dsr"/>
                                                         <exclude reference="gB8-dB-8Rr"/>
+                                                        <exclude reference="R1g-AM-uhV"/>
+                                                        <exclude reference="adY-2x-00a"/>
+                                                        <exclude reference="e7u-Rn-tVC"/>
+                                                        <exclude reference="wRF-aI-VyT"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -310,14 +310,14 @@
                                                         <include reference="6Je-Ah-V2K"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="R1g-AM-uhV"/>
-                                                        <include reference="adY-2x-00a"/>
-                                                        <include reference="e7u-Rn-tVC"/>
-                                                        <include reference="wRF-aI-VyT"/>
                                                         <include reference="971-OY-ArS"/>
                                                         <include reference="AK5-rL-VrW"/>
                                                         <include reference="SRX-OX-Dsr"/>
                                                         <include reference="gB8-dB-8Rr"/>
+                                                        <include reference="R1g-AM-uhV"/>
+                                                        <include reference="adY-2x-00a"/>
+                                                        <include reference="e7u-Rn-tVC"/>
+                                                        <include reference="wRF-aI-VyT"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
@@ -465,14 +465,14 @@
                                                         <exclude reference="9Aa-U8-poh"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <exclude reference="TIu-O9-4ta"/>
-                                                        <exclude reference="hsD-Cw-0Zs"/>
-                                                        <exclude reference="o8f-qO-O1s"/>
-                                                        <exclude reference="tzV-3R-D8e"/>
                                                         <exclude reference="6Xe-Ls-xph"/>
                                                         <exclude reference="HXB-xj-c1O"/>
                                                         <exclude reference="Odl-J4-0p2"/>
                                                         <exclude reference="obX-6m-4ca"/>
+                                                        <exclude reference="TIu-O9-4ta"/>
+                                                        <exclude reference="hsD-Cw-0Zs"/>
+                                                        <exclude reference="o8f-qO-O1s"/>
+                                                        <exclude reference="tzV-3R-D8e"/>
                                                     </mask>
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -481,14 +481,14 @@
                                                         <include reference="9Aa-U8-poh"/>
                                                     </mask>
                                                     <mask key="constraints">
-                                                        <include reference="TIu-O9-4ta"/>
-                                                        <include reference="hsD-Cw-0Zs"/>
-                                                        <include reference="o8f-qO-O1s"/>
-                                                        <include reference="tzV-3R-D8e"/>
                                                         <include reference="6Xe-Ls-xph"/>
                                                         <include reference="HXB-xj-c1O"/>
                                                         <include reference="Odl-J4-0p2"/>
                                                         <include reference="obX-6m-4ca"/>
+                                                        <include reference="TIu-O9-4ta"/>
+                                                        <include reference="hsD-Cw-0Zs"/>
+                                                        <include reference="o8f-qO-O1s"/>
+                                                        <include reference="tzV-3R-D8e"/>
                                                     </mask>
                                                 </variation>
                                                 <connections>
@@ -657,17 +657,17 @@
                         <outlet property="carriageDBottomConstraint" destination="wFX-vO-Ff6" id="BxJ-tg-FtZ"/>
                         <outlet property="firstFloor" destination="Kbb-8P-IV0" id="0oZ-hF-eGd"/>
                         <outlet property="groundFloor" destination="cuB-mw-Kpg" id="0N5-XE-LgH"/>
-                        <outlet property="leftCarriagePanelA" destination="etP-Xr-JPV" id="1Vr-Zy-rRO"/>
-                        <outlet property="leftCarriagePanelB" destination="oZ7-os-lgE" id="eOs-xW-sRx"/>
-                        <outlet property="leftCarriagePanelC" destination="F7e-fY-3Mo" id="e7k-tI-sU2"/>
-                        <outlet property="leftCarriagePanelD" destination="wl1-Lg-Jry" id="eEv-Gm-7ZX"/>
+                        <outlet property="leftPanelAConstraint" destination="Nd5-YL-Wsq" id="VP6-mc-25e"/>
+                        <outlet property="leftPanelBConstraint" destination="e7u-Rn-tVC" id="3sZ-fA-YXT"/>
+                        <outlet property="leftPanelCConstraint" destination="kfL-ea-srn" id="Can-SB-jBT"/>
+                        <outlet property="leftPanelDConstraint" destination="tzV-3R-D8e" id="L0b-lH-EJJ"/>
                         <outlet property="penthouseFloor" destination="ydZ-pp-Bpu" id="zJ3-yv-e3L"/>
                         <outlet property="ricLabel" destination="TEc-pe-wCh" id="IlR-Bt-C6J"/>
                         <outlet property="ricLabelConstraint" destination="BVd-oO-GEu" id="TRS-tv-yFe"/>
-                        <outlet property="rightCarriagePanelA" destination="uhH-Ax-KXC" id="8NC-jC-sIO"/>
-                        <outlet property="rightCarriagePanelB" destination="6Je-Ah-V2K" id="RCp-pq-Zgb"/>
-                        <outlet property="rightCarriagePanelC" destination="bs3-ce-UDJ" id="H6L-qP-igf"/>
-                        <outlet property="rightCarriagePanelD" destination="9Aa-U8-poh" id="otV-B9-DYs"/>
+                        <outlet property="rightPanelAConstraint" destination="Jbi-Lw-WSX" id="yoC-fI-GNy"/>
+                        <outlet property="rightPanelBConstraint" destination="971-OY-ArS" id="BLO-Lx-Isd"/>
+                        <outlet property="rightPanelCConstraint" destination="y7v-Hh-tHf" id="8Te-Q9-tHY"/>
+                        <outlet property="rightPanelDConstraint" destination="HXB-xj-c1O" id="j17-wd-xqf"/>
                         <outlet property="secondFloor" destination="GH0-Y7-XJ1" id="fwv-kT-iFy"/>
                         <outlet property="thirdFloor" destination="p8s-LT-w1P" id="oN3-z8-dNK"/>
                     </connections>

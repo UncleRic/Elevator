@@ -60,9 +60,6 @@
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="135" y="53" width="131" height="21"/>
-                                </variation>
                             </label>
                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ydZ-pp-Bpu" userLabel="Penthouse">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -181,9 +178,11 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etP-Xr-JPV" userLabel="Left Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                        <color key="backgroundColor" red="0.85625553129999998" green="0.0" blue="0.086592964829999994" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uhH-Ax-KXC" userLabel="Right Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                        <color key="backgroundColor" red="0.85625553129999998" green="0.0" blue="0.086592964829999994" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.56565517190000003" green="0.1548579782" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -278,12 +277,12 @@
                                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstItem="6Je-Ah-V2K" firstAttribute="width" secondItem="tdH-1I-0sr" secondAttribute="width" multiplier="0.5" id="AK5-rL-VrW" userLabel="Right Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstItem="oZ7-os-lgE" firstAttribute="height" secondItem="tdH-1I-0sr" secondAttribute="height" id="R1g-AM-uhV"/>
                                                     <constraint firstItem="6Je-Ah-V2K" firstAttribute="top" secondItem="tdH-1I-0sr" secondAttribute="top" id="SRX-OX-Dsr"/>
                                                     <constraint firstItem="oZ7-os-lgE" firstAttribute="width" secondItem="tdH-1I-0sr" secondAttribute="width" multiplier="0.5" id="adY-2x-00a" userLabel="Left Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstItem="oZ7-os-lgE" firstAttribute="leading" secondItem="tdH-1I-0sr" secondAttribute="leading" id="e7u-Rn-tVC"/>
                                                     <constraint firstItem="6Je-Ah-V2K" firstAttribute="height" secondItem="tdH-1I-0sr" secondAttribute="height" id="gB8-dB-8Rr"/>
@@ -358,12 +357,12 @@
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="bs3-ce-UDJ" firstAttribute="width" secondItem="RAa-Jp-EjK" secondAttribute="width" multiplier="0.5" id="4u9-zc-U2g" userLabel="Right Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstAttribute="height" constant="60" id="6gf-nA-iu1"/>
                                                     <constraint firstItem="F7e-fY-3Mo" firstAttribute="height" secondItem="RAa-Jp-EjK" secondAttribute="height" id="hSo-Lr-fDE"/>
                                                     <constraint firstItem="F7e-fY-3Mo" firstAttribute="width" secondItem="RAa-Jp-EjK" secondAttribute="width" multiplier="0.5" id="jGH-V3-qLR" userLabel="Left Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstItem="F7e-fY-3Mo" firstAttribute="leading" secondItem="RAa-Jp-EjK" secondAttribute="leading" constant="15" id="kfL-ea-srn">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -448,12 +447,12 @@
                                                     </constraint>
                                                     <constraint firstAttribute="height" constant="60" id="KA4-R2-bl0"/>
                                                     <constraint firstItem="9Aa-U8-poh" firstAttribute="width" secondItem="9hD-La-7Ha" secondAttribute="width" multiplier="0.5" id="Odl-J4-0p2" userLabel="Right Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstItem="wl1-Lg-Jry" firstAttribute="height" secondItem="9hD-La-7Ha" secondAttribute="height" id="TIu-O9-4ta"/>
                                                     <constraint firstItem="wl1-Lg-Jry" firstAttribute="top" secondItem="9hD-La-7Ha" secondAttribute="top" id="hsD-Cw-0Zs"/>
                                                     <constraint firstItem="wl1-Lg-Jry" firstAttribute="width" secondItem="9hD-La-7Ha" secondAttribute="width" multiplier="0.5" id="o8f-qO-O1s" userLabel="Left Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstItem="9Aa-U8-poh" firstAttribute="top" secondItem="9hD-La-7Ha" secondAttribute="top" id="obX-6m-4ca"/>
                                                     <constraint firstItem="wl1-Lg-Jry" firstAttribute="leading" secondItem="9hD-La-7Ha" secondAttribute="leading" constant="15.5" id="tzV-3R-D8e">

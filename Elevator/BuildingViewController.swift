@@ -61,7 +61,7 @@ class  BuildingViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        carriageADoorConstraints = [leftPanelAConstraint, rightPanelBConstraint]
+        carriageADoorConstraints = [leftPanelAConstraint, rightPanelCConstraint]
         carriageBDoorConstraints = [leftPanelBConstraint, rightPanelBConstraint]
         carriageCDoorConstraints = [leftPanelCConstraint, rightPanelCConstraint]
         carriageDDoorConstraints = [leftPanelDConstraint, rightPanelDConstraint]
@@ -75,9 +75,9 @@ class  BuildingViewController: UIViewController {
         NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:nil, userInfo:infoDict)
         
         animatecarriageA(.ground)
-        animatecarriageB(.penthouse)
-        animatecarriageC(.third)
-        animatecarriageD(.second)
+//        animatecarriageB(.penthouse)
+//        animatecarriageC(.third)
+//        animatecarriageD(.second)
     }
     
     // -----------------------------------------------------------------------------------------------------

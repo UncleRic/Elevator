@@ -189,7 +189,7 @@
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstItem="uhH-Ax-KXC" firstAttribute="width" secondItem="xln-4f-ptF" secondAttribute="width" multiplier="0.5" id="05H-tm-P5i" userLabel="Right Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstAttribute="trailing" secondItem="uhH-Ax-KXC" secondAttribute="trailing" constant="1" id="Jbi-Lw-WSX">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
@@ -197,7 +197,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="KWF-yU-BPc"/>
                                                     <constraint firstItem="etP-Xr-JPV" firstAttribute="leading" secondItem="xln-4f-ptF" secondAttribute="leading" id="Nd5-YL-Wsq"/>
                                                     <constraint firstItem="etP-Xr-JPV" firstAttribute="width" secondItem="xln-4f-ptF" secondAttribute="width" multiplier="0.5" id="VWQ-Vf-btW" userLabel="Left Panel.width = 0.5 × width">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="-1.25"/>
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                                     </constraint>
                                                     <constraint firstItem="etP-Xr-JPV" firstAttribute="height" secondItem="xln-4f-ptF" secondAttribute="height" id="VgP-DX-bcp"/>
                                                     <constraint firstItem="uhH-Ax-KXC" firstAttribute="height" secondItem="xln-4f-ptF" secondAttribute="height" id="fBh-zM-wQI"/>

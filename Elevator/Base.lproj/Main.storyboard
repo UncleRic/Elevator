@@ -657,17 +657,17 @@
                         <outlet property="carriageDBottomConstraint" destination="wFX-vO-Ff6" id="BxJ-tg-FtZ"/>
                         <outlet property="firstFloor" destination="Kbb-8P-IV0" id="0oZ-hF-eGd"/>
                         <outlet property="groundFloor" destination="cuB-mw-Kpg" id="0N5-XE-LgH"/>
-                        <outlet property="leftPanelAConstraint" destination="Nd5-YL-Wsq" id="VP6-mc-25e"/>
-                        <outlet property="leftPanelBConstraint" destination="e7u-Rn-tVC" id="3sZ-fA-YXT"/>
-                        <outlet property="leftPanelCConstraint" destination="kfL-ea-srn" id="Can-SB-jBT"/>
-                        <outlet property="leftPanelDConstraint" destination="tzV-3R-D8e" id="L0b-lH-EJJ"/>
+                        <outlet property="leftPanelAWidthConstraint" destination="VWQ-Vf-btW" id="7fC-7N-ay3"/>
+                        <outlet property="leftPanelBWidthConstraint" destination="adY-2x-00a" id="DRq-T3-Z5o"/>
+                        <outlet property="leftPanelCWidthConstraint" destination="jGH-V3-qLR" id="90k-jb-p2H"/>
+                        <outlet property="leftPanelDWidthConstraint" destination="o8f-qO-O1s" id="fly-Fq-Xe7"/>
                         <outlet property="penthouseFloor" destination="ydZ-pp-Bpu" id="zJ3-yv-e3L"/>
                         <outlet property="ricLabel" destination="TEc-pe-wCh" id="IlR-Bt-C6J"/>
                         <outlet property="ricLabelConstraint" destination="BVd-oO-GEu" id="TRS-tv-yFe"/>
-                        <outlet property="rightPanelAConstraint" destination="Jbi-Lw-WSX" id="yoC-fI-GNy"/>
-                        <outlet property="rightPanelBConstraint" destination="971-OY-ArS" id="BLO-Lx-Isd"/>
-                        <outlet property="rightPanelCConstraint" destination="y7v-Hh-tHf" id="8Te-Q9-tHY"/>
-                        <outlet property="rightPanelDConstraint" destination="HXB-xj-c1O" id="j17-wd-xqf"/>
+                        <outlet property="rightPanelAWidthConstraint" destination="05H-tm-P5i" id="1dP-Vf-zup"/>
+                        <outlet property="rightPanelBWidthConstraint" destination="AK5-rL-VrW" id="L9A-fI-4Ac"/>
+                        <outlet property="rightPanelCWidthConstraint" destination="4u9-zc-U2g" id="YIy-TZ-sTh"/>
+                        <outlet property="rightPanelDWidthConstraint" destination="Odl-J4-0p2" id="fU7-G9-xh5"/>
                         <outlet property="secondFloor" destination="GH0-Y7-XJ1" id="fwv-kT-iFy"/>
                         <outlet property="thirdFloor" destination="p8s-LT-w1P" id="oN3-z8-dNK"/>
                     </connections>

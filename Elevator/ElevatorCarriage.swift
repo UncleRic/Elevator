@@ -82,7 +82,7 @@ class CarriageView:UIView {
         case .third:
             print("Carriage '\(self.tag)' is on the third floor.")
         case .penthouse:
-            print("Carriage '\(self.tag)' is on the fourth floor.")
+            print("Carriage '\(self.tag)' is on the Penthouse.")
         }
     }
     

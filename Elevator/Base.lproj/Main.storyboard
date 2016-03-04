@@ -3,46 +3,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10084"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ZJ7-Nv-Sx9">
-            <objects>
-                <viewController id="hzr-1G-lkz" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="FN2-jW-wSH"/>
-                        <viewControllerLayoutGuide type="bottom" id="L7U-9d-bGE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xwB-XC-fQR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLk-il-N7s">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="130" y="221" width="22" height="22"/>
-                                </variation>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="CLk-il-N7s"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="CLk-il-N7s"/>
-                            </mask>
-                        </variation>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="l0h-ig-KBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="180" y="-718.5"/>
-        </scene>
         <!--Building View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -55,8 +20,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ric's Elevators" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEc-pe-wCh">
-                                <rect key="frame" x="249" y="53" width="103" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ric's Elevators" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TEc-pe-wCh">
+                                <rect key="frame" x="246" y="53" width="109.5" height="19"/>
                                 <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -171,10 +136,10 @@
                                 <rect key="frame" x="60" y="101" width="480" height="415"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tGT-YB-7mn" userLabel="Elevator A">
-                                        <rect key="frame" x="0.0" y="0.0" width="113" height="415"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="112.5" height="415"/>
                                         <subviews>
                                             <view opaque="NO" tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xln-4f-ptF" userLabel="Carriage A" customClass="CarriageView" customModule="Elevator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="296" width="111.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="296" width="111" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="etP-Xr-JPV" userLabel="Left Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -253,10 +218,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vRh-Dt-92a" userLabel="Elevator B">
-                                        <rect key="frame" x="123" y="0.0" width="113" height="415"/>
+                                        <rect key="frame" x="122.5" y="0.0" width="112.5" height="415"/>
                                         <subviews>
                                             <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdH-1I-0sr" userLabel="Carriage B" customClass="CarriageView" customModule="Elevator" customModuleProvider="target">
-                                                <rect key="frame" x="0.5" y="178" width="111.5" height="60"/>
+                                                <rect key="frame" x="0.5" y="178" width="111" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ7-os-lgE" userLabel="Left Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -339,10 +304,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ykn-VG-0Kf" userLabel="Elevator C">
-                                        <rect key="frame" x="245" y="0.0" width="113" height="415"/>
+                                        <rect key="frame" x="245" y="0.0" width="112.5" height="415"/>
                                         <subviews>
                                             <view autoresizesSubviews="NO" tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RAa-Jp-EjK" userLabel="Carriage C" customClass="CarriageView" customModule="Elevator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="178" width="111" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F7e-fY-3Mo" userLabel="Left Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -423,10 +388,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mQH-wK-5kp" userLabel="Elevator D">
-                                        <rect key="frame" x="368" y="0.0" width="113" height="415"/>
+                                        <rect key="frame" x="367.5" y="0.0" width="112.5" height="415"/>
                                         <subviews>
                                             <view tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hD-La-7Ha" userLabel="Carriage D" customClass="CarriageView" customModule="Elevator" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="178" width="111.5" height="60"/>
+                                                <rect key="frame" x="0.0" y="178" width="111" height="60"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wl1-Lg-Jry" userLabel="Left Panel">
                                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>

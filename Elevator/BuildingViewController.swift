@@ -61,7 +61,7 @@ class  BuildingViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        carriageADoorConstraints = [leftPanelAConstraint, rightPanelCConstraint]
+        carriageADoorConstraints = [leftPanelAConstraint, rightPanelAConstraint]
         carriageBDoorConstraints = [leftPanelBConstraint, rightPanelBConstraint]
         carriageCDoorConstraints = [leftPanelCConstraint, rightPanelCConstraint]
         carriageDDoorConstraints = [leftPanelDConstraint, rightPanelDConstraint]

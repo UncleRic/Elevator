@@ -14,6 +14,12 @@ class CarriageView:UIView {
     var destinationStatus:CarriageStatus = .stationary
     var inTransit = false
     
+    var status:carriageDestinationTuple {
+        get {
+            return (direction:destinationStatus, nextFloor:currentFloor.rawValue)
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         NSNotificationCenter.defaultCenter().addObserver(self,

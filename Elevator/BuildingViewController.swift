@@ -120,19 +120,25 @@ class  BuildingViewController: UIViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func carriageForFloor() {
+    func carriageUpwardBound(currentFloor:Int) {
+        
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func carriageDownwardBound(currentFloor:Int) {
         
     }
     
     // -----------------------------------------------------------------------------------------------------
     // MARK: -
     
-    func gotoFloor(carriage: carriageDestinationTuple) {
-        switch carriage.direction {
-        case .up:
-            print("up")
-        case .down:
-            print("down")
+    func gotoFloor(currentFloor: currentFloorRequestTuple) {
+        switch currentFloor.direction {
+        case .upwardBound:
+            carriageUpwardBound(currentFloor.currentFloor)
+        default:
+             carriageUpwardBound(currentFloor.currentFloor)
         }
         
     }

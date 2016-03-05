@@ -136,18 +136,6 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     // MARK: -
     
-    func chosenCarriage(tag:Int) -> CarriageView? {
-       let availTags:Set = [1, 2, 3, 4]
-        
-        if availTags.contains(tag) {
-            return self.view.viewWithTag(tag) as? CarriageView
-        }
-        
-        return nil
-    }
-    
-    // -----------------------------------------------------------------------------------------------------
-    
     func carriageUpwardBound(currentFloor:Int) {
         var carriageTuples = [CarriageFloorTuple]()
         for carriage in carriages where carriage.destinationStatus == .upwardBound ||
@@ -161,18 +149,20 @@ class  BuildingViewController: UIViewController {
         
         carriageTuples = carriageTuples.sort() {$0.currentFloor < $1.currentFloor}
         
-       let selectedCarriage = CarriageTag(rawValue:carriages[carriageTuples[0].carriageTag].tag)
+        let selectedCarriageTag = CarriageTag(rawValue:carriageTuples[0].carriageTag)!
         
-        let myInt = selectedCarriage!.rawValue
-        
-        guard let theCarriage = self.view.viewWithTag(myInt) else {
-            return
+        switch selectedCarriageTag {
+        case .carriageATag:
+            animatecarriageA(FloorTag(rawValue:currentFloor)!)
+        case .carriageBTag:
+            animatecarriageB(FloorTag(rawValue:currentFloor)!)
+        case .carriageCTag:
+            animatecarriageC(FloorTag(rawValue:currentFloor)!)
+        case .carriageDTag:
+            animatecarriageD(FloorTag(rawValue:currentFloor)!)
         }
-        
-        print (theCarriage)
-       
-        
     }
+    
     
     // -----------------------------------------------------------------------------------------------------
     

@@ -492,6 +492,12 @@
                                             <action selector="animateAction:" destination="BYZ-38-t0r" id="uWd-0a-rf9"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Info" id="GY6-yx-Fvx">
+                                        <color key="tintColor" red="1" green="0.9930099537" blue="0.63017202210000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="infoAction:" destination="BYZ-38-t0r" id="Wha-BI-SDZ"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Reset" id="SQP-IX-f1L" userLabel="Reset">
                                         <color key="tintColor" red="0.93650108580000002" green="0.95151317120000001" blue="0.93610924480000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>

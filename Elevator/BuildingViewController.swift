@@ -52,6 +52,7 @@ class  BuildingViewController: UIViewController {
     var carriageDDoorConstraints = [NSLayoutConstraint]()
     
     var carriages = [CarriageView]()
+    // MARK: -
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -76,6 +77,17 @@ class  BuildingViewController: UIViewController {
         animatecarriageB(.penthouse)
         animatecarriageC(.third)
         animatecarriageD(.second)
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    @IBAction func infoAction(sender: UIBarButtonItem) {
+        
+        print ("Carriage A currentfloor: \(carriageA.currentFloor); destinationStatus = \(carriageA.destinationStatus)")
+        print ("Carriage B currentfloor: \(carriageB.currentFloor); destinationStatus = \(carriageB.destinationStatus)")
+        print ("Carriage C currentfloor: \(carriageC.currentFloor); destinationStatus = \(carriageC.destinationStatus)")
+        print ("Carriage D currentfloor: \(carriageD.currentFloor); destinationStatus = \(carriageD.destinationStatus)")
+        
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -122,6 +134,19 @@ class  BuildingViewController: UIViewController {
     }
     
     // -----------------------------------------------------------------------------------------------------
+    // MARK: -
+    
+    func chosenCarriage(tag:Int) -> CarriageView? {
+       let availTags:Set = [1, 2, 3, 4]
+        
+        if availTags.contains(tag) {
+            return self.view.viewWithTag(tag) as? CarriageView
+        }
+        
+        return nil
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
     
     func carriageUpwardBound(currentFloor:Int) {
         var carriageTuples = [CarriageFloorTuple]()
@@ -130,15 +155,22 @@ class  BuildingViewController: UIViewController {
             carriage.currentFloor.rawValue <= currentFloor {
                 // Get the nearest carriage that's in route:
                 let delta = currentFloor - carriage.currentFloor.rawValue
-                let myTuple:CarriageFloorTuple = (carriageTag:0, currentFloor:delta)
+                let myTuple:CarriageFloorTuple = (carriageTag:carriage.tag, currentFloor:delta)
                 carriageTuples.append(myTuple)
         }
         
         carriageTuples = carriageTuples.sort() {$0.currentFloor < $1.currentFloor}
         
-        let selectedCarriage = carriages[carriageTuples[0].carriageTag]
+       let selectedCarriage = CarriageTag(rawValue:carriages[carriageTuples[0].carriageTag].tag)
         
-        print("Selected Carriage: \(selectedCarriage)")
+        let myInt = selectedCarriage!.rawValue
+        
+        guard let theCarriage = self.view.viewWithTag(myInt) else {
+            return
+        }
+        
+        print (theCarriage)
+       
         
     }
     
@@ -230,7 +262,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.carriageA.currentFloor = floorTag
                 print("Carriage A is at: \(floorTag.desc())")
-           })
+            })
         }
     }
     

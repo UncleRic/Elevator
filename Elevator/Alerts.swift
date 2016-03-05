@@ -22,9 +22,6 @@ func showAlert(sender sender:UIViewController,
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: .Alert)
         alertController.view.tintColor = UIColor.brownColor()
         
-        var myUserInfo = userInfo
-        
-        
         switch alertPurpose {
         case .simple:
             var OKAction:UIAlertAction?
@@ -36,27 +33,23 @@ func showAlert(sender sender:UIViewController,
             var UpButton:UIAlertAction?
             var DownButton:UIAlertAction?
             
-
-            if let floorString = myUserInfo?[kDestinationFloor] as? String {
+            if let originFloor = userInfo?[kDestinationFloor] as? Int {
+                
                 UpButton = UIAlertAction(title: "Up", style: .Default) { (action) in
-                    myUserInfo!["destination"] = "up"
-                    NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification,
-                        object:floorString,
-                        userInfo:myUserInfo)
-                    
+                    let targetFloor:carriageDestinationTuple = (direction:FloorDirection.up, nextFloor:originFloor)
+                    (sender as! BuildingViewController).gotoFloor(targetFloor)
                 }
                 
                 DownButton = UIAlertAction(title: "Down", style: .Default) { (action) in
-                    myUserInfo!["destination"] = "down"
-                    NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification,
-                        object:floorString,
-                        userInfo:myUserInfo)
+                    let targetFloor:carriageDestinationTuple = (direction:FloorDirection.down, nextFloor:originFloor)
+                    (sender as! BuildingViewController).gotoFloor(targetFloor)
                 }
-    
+                
                 alertController.addAction(UpButton!)
                 alertController.addAction(DownButton!)
                 sender.presentViewController(alertController, animated: true, completion: nil)
             }
+            
         }
     })
 }

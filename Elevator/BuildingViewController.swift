@@ -112,10 +112,29 @@ class  BuildingViewController: UIViewController {
         
         if let floor = FloorTag(rawValue: sender.view!.tag) {
             let floorString = floor.desc()
-            let infoDict:Dictionary = [kDestinationFloor:floorString]
+            let infoDict:Dictionary = [kDestinationFloor:sender.view!.tag]
             
             showAlert(sender: self, withTitle: floorString, withMessage: "", userInfo:infoDict, alertPurpose:.floorButton)
         }
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func carriageForFloor() {
+        
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    // MARK: -
+    
+    func gotoFloor(carriage: carriageDestinationTuple) {
+        switch carriage.direction {
+        case .up:
+            print("up")
+        case .down:
+            print("down")
+        }
+        
     }
 }
 
@@ -184,6 +203,7 @@ extension BuildingViewController {
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 
                 self.carriageA.check(FloorPosition.penthouse)
+                self.carriageA.currentFloor = FloorTag.penthouse
             })
             
         }
@@ -208,7 +228,7 @@ extension BuildingViewController {
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                
+                self.carriageB.currentFloor = FloorTag.third
                 self.carriageB.check(FloorPosition.third)
             })
         }
@@ -231,7 +251,7 @@ extension BuildingViewController {
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                
+                self.carriageC.currentFloor = FloorTag.second
                 self.carriageC.check(FloorPosition.second)
             })
         }
@@ -253,6 +273,7 @@ extension BuildingViewController {
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             self.carriageD.check(FloorPosition.first)
+            self.carriageD.currentFloor = FloorTag.first
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 
             })

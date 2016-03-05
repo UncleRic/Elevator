@@ -12,6 +12,7 @@ let kRideRequestNotification = "RideRequest"
 let kDestinationFloor = "destinationFloor"
 
 typealias RideRequestDict = [String:AnyObject]
+typealias carriageDestinationTuple = (direction:FloorDirection, nextFloor:Int)
 
 enum FloorPosition:CGFloat {
     case penthouse = 30.0
@@ -19,6 +20,11 @@ enum FloorPosition:CGFloat {
     case second = 181.0
     case first = 257.0
     case ground = 354.0
+}
+
+enum FloorDirection:Int {
+    case up = 0
+    case down
 }
 
 enum FloorTag:Int {

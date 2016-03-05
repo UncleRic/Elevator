@@ -12,7 +12,7 @@ class CarriageView:UIView {
     var selectedFloors = [Int]()
     var destinationStatus:CarriageStatus = .stationary
     
-    var status:carriageDestinationTuple {
+    var status:CarriageDestinationTuple {
         get {
             return (direction:destinationStatus, nextFloor:currentFloor.rawValue)
         }
@@ -66,23 +66,6 @@ class CarriageView:UIView {
         
         print("Handle Ride Request for id: \(self.tag) to \(destination): \(selectedFloors)")
         
-    }
-    
-    // -----------------------------------------------------------------------------------------------------
-    
-    func check(theFloor:FloorPosition) {
-        switch theFloor {
-        case .ground:
-            print("Carriage '\(self.tag)' is on the ground floor.")
-        case .first:
-            print("Carriage '\(self.tag)' is on the first floor.")
-        case .second:
-            print("Carriage '\(self.tag)' is on the second floor.")
-        case .third:
-            print("Carriage '\(self.tag)' is on the third floor.")
-        case .penthouse:
-            print("Carriage '\(self.tag)' is on the Penthouse.")
-        }
     }
     
 }

@@ -124,30 +124,42 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func carriageUpwardBound(currentFloor:Int) {
-        for carriage in carriages where carriage.destinationStatus == .upwardBound &&
+        var carriageTuples = [CarriageFloorTuple]()
+        for carriage in carriages where carriage.destinationStatus == .upwardBound ||
+            carriage.destinationStatus == .stationary &&
             carriage.currentFloor.rawValue <= currentFloor {
-            
+                // Get the nearest carriage that's in route:
+                let delta = currentFloor - carriage.currentFloor.rawValue
+                let myTuple:CarriageFloorTuple = (carriageTag:0, currentFloor:delta)
+                carriageTuples.append(myTuple)
         }
+        
+        carriageTuples = carriageTuples.sort() {$0.currentFloor < $1.currentFloor}
+        
+        let selectedCarriage = carriages[carriageTuples[0].carriageTag]
+        
+        print("Selected Carriage: \(selectedCarriage)")
+        
     }
     
     // -----------------------------------------------------------------------------------------------------
     
     func carriageDownwardBound(currentFloor:Int) {
-        for carriage in carriages where carriage.destinationStatus == .downwardBound &&
+        for carriage in carriages where carriage.destinationStatus == .downwardBound ||
+            carriage.destinationStatus == .stationary &&
             carriage.currentFloor.rawValue >= currentFloor {
-                
         }
     }
     
     // -----------------------------------------------------------------------------------------------------
     // MARK: -
     
-    func gotoFloor(currentFloor: currentFloorRequestTuple) {
+    func gotoFloor(currentFloor: CurrentFloorRequestTuple) {
         switch currentFloor.direction {
         case .upwardBound:
             carriageUpwardBound(currentFloor.currentFloor)
         default:
-             carriageUpwardBound(currentFloor.currentFloor)
+            carriageUpwardBound(currentFloor.currentFloor)
         }
         
     }
@@ -216,11 +228,9 @@ extension BuildingViewController {
             
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                
-                self.carriageA.check(FloorPosition.penthouse)
-                self.carriageA.currentFloor = FloorTag.penthouse
-            })
-            
+                self.carriageA.currentFloor = floorTag
+                print("Carriage A is at: \(floorTag.desc())")
+           })
         }
     }
     
@@ -243,8 +253,8 @@ extension BuildingViewController {
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                self.carriageB.currentFloor = FloorTag.third
-                self.carriageB.check(FloorPosition.third)
+                self.carriageB.currentFloor = floorTag
+                print("Carriage B is at: \(floorTag.desc())")
             })
         }
     }
@@ -266,8 +276,8 @@ extension BuildingViewController {
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                self.carriageC.currentFloor = FloorTag.second
-                self.carriageC.check(FloorPosition.second)
+                self.carriageC.currentFloor = floorTag
+                print("Carriage C is at: \(floorTag.desc())")
             })
         }
     }
@@ -287,8 +297,8 @@ extension BuildingViewController {
             }
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
-            self.carriageD.check(FloorPosition.first)
-            self.carriageD.currentFloor = FloorTag.first
+            self.carriageD.currentFloor = floorTag
+            print("Carriage D is at: \(floorTag.desc())")
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 
             })

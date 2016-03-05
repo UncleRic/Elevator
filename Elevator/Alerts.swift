@@ -36,12 +36,12 @@ func showAlert(sender sender:UIViewController,
             if let originFloor = userInfo?[kDestinationFloor] as? Int {
                 
                 UpButton = UIAlertAction(title: "Up", style: .Default) { (action) in
-                    let targetFloor:currentFloorRequestTuple = (direction:CarriageStatus.upwardBound, currentFloor:originFloor)
+                    let targetFloor:CurrentFloorRequestTuple = (direction:CarriageStatus.upwardBound, currentFloor:originFloor)
                     (sender as! BuildingViewController).gotoFloor(targetFloor)
                 }
                 
                 DownButton = UIAlertAction(title: "Down", style: .Default) { (action) in
-                    let targetFloor:currentFloorRequestTuple = (direction:CarriageStatus.downwardBound, currentFloor:originFloor)
+                    let targetFloor:CurrentFloorRequestTuple = (direction:CarriageStatus.downwardBound, currentFloor:originFloor)
                     (sender as! BuildingViewController).gotoFloor(targetFloor)
                 }
                 

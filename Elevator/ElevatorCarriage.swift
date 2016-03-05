@@ -10,9 +10,7 @@ import UIKit
 class CarriageView:UIView {
     var currentFloor:FloorTag = .ground
     var selectedFloors = [Int]()
-    var isUpwardBound = false
     var destinationStatus:CarriageStatus = .stationary
-    var inTransit = false
     
     var status:carriageDestinationTuple {
         get {
@@ -43,16 +41,7 @@ class CarriageView:UIView {
         let myUserInfo = notification.userInfo
         let destination = myUserInfo![kDestinationFloor] as? String
         
-        switch destinationStatus {
-            case .upwardBound:
-                print("Upward Bound")
-            case .downwardBound:
-                print("Downward Bound")
-            default:
-                print("Stationary")
-        }
         
-    
         if destination == "penthouse" {
             selectedFloors.append(FloorTag.penthouse.rawValue)
         } else if destination == "third" {
@@ -65,10 +54,14 @@ class CarriageView:UIView {
             selectedFloors.append(FloorTag.ground.rawValue)
         }
         
-        if isUpwardBound {
+        
+        switch destinationStatus {
+        case .upwardBound:
             selectedFloors = Array(Set(selectedFloors)).sort()
-        } else {
+        case .downwardBound:
             selectedFloors = Array(Set(selectedFloors)).sort{$0>$1}
+        default:
+            selectedFloors.removeAll()
         }
         
         print("Handle Ride Request for id: \(self.tag) to \(destination): \(selectedFloors)")

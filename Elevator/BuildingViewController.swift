@@ -51,6 +51,8 @@ class  BuildingViewController: UIViewController {
     var carriageCDoorConstraints = [NSLayoutConstraint]()
     var carriageDDoorConstraints = [NSLayoutConstraint]()
     
+    var carriages = [CarriageView]()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -60,6 +62,7 @@ class  BuildingViewController: UIViewController {
         carriageBDoorConstraints = [leftPanelBWidthConstraint, rightPanelBWidthConstraint]
         carriageCDoorConstraints = [leftPanelCWidthConstraint, rightPanelCWidthConstraint]
         carriageDDoorConstraints = [leftPanelDWidthConstraint, rightPanelDWidthConstraint]
+        carriages = [carriageA, carriageB, carriageC, carriageD]
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -121,13 +124,19 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func carriageUpwardBound(currentFloor:Int) {
-        
+        for carriage in carriages where carriage.destinationStatus == .upwardBound &&
+            carriage.currentFloor.rawValue <= currentFloor {
+            
+        }
     }
     
     // -----------------------------------------------------------------------------------------------------
     
     func carriageDownwardBound(currentFloor:Int) {
-        
+        for carriage in carriages where carriage.destinationStatus == .downwardBound &&
+            carriage.currentFloor.rawValue >= currentFloor {
+                
+        }
     }
     
     // -----------------------------------------------------------------------------------------------------

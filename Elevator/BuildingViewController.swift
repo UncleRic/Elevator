@@ -149,11 +149,11 @@ class  BuildingViewController: UIViewController {
     
     func carriageUpwardBound(currentFloor:Int) {
         var carriageTuples = [CarriageFloorTuple]()
-        for carriage in carriages where carriage.destinationStatus == .upwardBound ||
-            carriage.destinationStatus == .stationary &&
-            carriage.currentFloor.rawValue <= currentFloor {
+        for carriage in carriages where carriage.destinationStatus == .upwardBound &&
+            carriage.currentFloor.rawValue <= currentFloor ||
+            carriage.destinationStatus == .stationary {
                 if carriage.currentFloor.rawValue == currentFloor {
-                    liftCarriage(CarriageTag(rawValue: carriage.tag)!, floorTag: FloorTag(rawValue:currentFloor)!)
+                    summonCarriage(CarriageTag(rawValue: carriage.tag)!, floorTag: FloorTag(rawValue:currentFloor)!)
                     return
                 }
                 // Get the nearest carriage that's in route:
@@ -171,7 +171,7 @@ class  BuildingViewController: UIViewController {
         
         let selectedCarriageTag = CarriageTag(rawValue:carriageTuples[0].carriageTag)!
         
-        liftCarriage(selectedCarriageTag, floorTag: FloorTag(rawValue:currentFloor)!)
+        summonCarriage(selectedCarriageTag, floorTag: FloorTag(rawValue:currentFloor)!)
         
     }
     
@@ -180,11 +180,12 @@ class  BuildingViewController: UIViewController {
     
     func carriageDownwardBound(currentFloor:Int) {
         var carriageTuples = [CarriageFloorTuple]()
-        for carriage in carriages where carriage.destinationStatus == .downwardBound ||
-            carriage.destinationStatus == .stationary &&
-            carriage.currentFloor.rawValue >= currentFloor {
+        
+        for carriage in carriages where carriage.destinationStatus == .downwardBound &&
+            carriage.currentFloor.rawValue >= currentFloor ||
+            carriage.destinationStatus == .stationary {
                 if carriage.currentFloor.rawValue == currentFloor {
-                    liftCarriage(CarriageTag(rawValue:carriage.tag)!, floorTag: FloorTag(rawValue:currentFloor)!)
+                    summonCarriage(CarriageTag(rawValue:carriage.tag)!, floorTag: FloorTag(rawValue:currentFloor)!)
                     return
                 }
                 // Get the nearest carriage that's in route:
@@ -202,7 +203,7 @@ class  BuildingViewController: UIViewController {
         
         let selectedCarriageTag = CarriageTag(rawValue:carriageTuples[0].carriageTag)!
         
-        liftCarriage(selectedCarriageTag, floorTag: FloorTag(rawValue:currentFloor)!)
+        summonCarriage(selectedCarriageTag, floorTag: FloorTag(rawValue:currentFloor)!)
         
         
     }
@@ -266,7 +267,7 @@ extension BuildingViewController {
     // -----------------------------------------------------------------------------------------------------
     // MARK: -
     
-    func liftCarriage(carriage:CarriageTag, floorTag:FloorTag) {
+    func summonCarriage(carriage:CarriageTag, floorTag:FloorTag) {
         
         var isSameFloor = false
         
@@ -274,30 +275,21 @@ extension BuildingViewController {
         case .carriageATag:
             if self.carriageA.center.y == floorTag.floorPosn() {
                 isSameFloor = true
-            } else {
-                self.carriageA.center.y = floorTag.floorPosn()
             }
             
         case .carriageBTag:
             if self.carriageB.center.y == floorTag.floorPosn() {
                 isSameFloor = true
-            } else {
-                self.carriageB.center.y = floorTag.floorPosn()
             }
             
         case .carriageCTag:
             if self.carriageC.center.y == floorTag.floorPosn() {
                 isSameFloor = true
-            } else {
-                self.carriageC.center.y = floorTag.floorPosn()
             }
             
         case .carriageDTag:
             if self.carriageD.center.y == floorTag.floorPosn() {
                 isSameFloor = true
-            } else  {
-                
-                self.carriageD.center.y = floorTag.floorPosn()
             }
         }
         
@@ -349,7 +341,7 @@ extension BuildingViewController {
                         self.view.layoutIfNeeded()
                     })
                 }
-
+                
                 print("Carriage B is at: \(floorTag.desc()) \(self.carriageB.destinationStatus)")
                 
             case .carriageCTag:
@@ -365,7 +357,7 @@ extension BuildingViewController {
                         self.view.layoutIfNeeded()
                     })
                 }
-
+                
                 print("Carriage C is at: \(floorTag.desc()) \(self.carriageC.destinationStatus)")
                 
             case .carriageDTag:
@@ -381,7 +373,7 @@ extension BuildingViewController {
                         self.view.layoutIfNeeded()
                     })
                 }
-
+                
                 print("Carriage D is at: \(floorTag.desc()) \(self.carriageD.destinationStatus)")
                 
             }

@@ -179,7 +179,7 @@ class  BuildingViewController: UIViewController {
             carriage.destinationStatus == .stationary &&
             carriage.currentFloor.rawValue >= currentFloor {
                 if carriage.currentFloor.rawValue == currentFloor {
-                    liftCarriage(CarriageTag(rawValue:currentFloor)!, floorTag: FloorTag(rawValue:currentFloor)!)
+                    liftCarriage(CarriageTag(rawValue:carriage.tag)!, floorTag: FloorTag(rawValue:currentFloor)!)
                     return
                 }
                 // Get the nearest carriage that's in route:
@@ -293,14 +293,14 @@ extension BuildingViewController {
         // If carriage is already on the same floor, then merely animate the doors:
         
         if isSameFloor {
+            let index = (carriage.rawValue -  1)
+            let currentDoorConstraints = self.carriageDoorConstraints[index]
+
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                
-                let shit = self.carriageDoorConstraints[carriage.rawValue]
-                
-                if shit[0].active {
-                    NSLayoutConstraint.deactivateConstraints(self.carriageADoorConstraints)
+                if currentDoorConstraints[0].active {
+                    NSLayoutConstraint.deactivateConstraints(currentDoorConstraints)
                 } else {
-                    NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
+                    NSLayoutConstraint.activateConstraints(currentDoorConstraints)
                 }
                 self.view.layoutIfNeeded()
             })
@@ -311,19 +311,19 @@ extension BuildingViewController {
                 switch carriage {
                 case .carriageATag:
                     self.carriageA.center.y = floorTag.floorPosn()
-                    print("Carriage A is at: \(floorTag.desc())")
+                    print("Carriage A is at: \(floorTag.desc()); \(self.carriageA.destinationStatus)")
                     
                 case .carriageBTag:
                     self.carriageB.center.y = floorTag.floorPosn()
-                    print("Carriage B is at: \(floorTag.desc())")
+                    print("Carriage B is at: \(floorTag.desc()) \(self.carriageB.destinationStatus)")
                     
                 case .carriageCTag:
                     self.carriageC.center.y = floorTag.floorPosn()
-                    print("Carriage C is at: \(floorTag.desc())")
+                    print("Carriage C is at: \(floorTag.desc()) \(self.carriageC.destinationStatus)")
                     
                 case .carriageDTag:
                     self.carriageD.center.y = floorTag.floorPosn()
-                    print("Carriage D is at: \(floorTag.desc())")
+                    print("Carriage D is at: \(floorTag.desc()) \(self.carriageD.destinationStatus)")
                     
                 }
                 self.view.layoutIfNeeded()
@@ -363,7 +363,7 @@ extension BuildingViewController {
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.carriageA.currentFloor = floorTag
-                print("Carriage A is at: \(floorTag.desc())")
+                print(" {animatecarriageA} Carriage A is at: \(floorTag.desc()); \(self.carriageA.destinationStatus)")
             })
         }
     }
@@ -388,7 +388,7 @@ extension BuildingViewController {
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.carriageB.currentFloor = floorTag
-                print("Carriage B is at: \(floorTag.desc())")
+                print(" {animatecarriageB} Carriage B is at: \(floorTag.desc()); \(self.carriageB.destinationStatus)")
             })
         }
     }
@@ -411,7 +411,7 @@ extension BuildingViewController {
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 self.carriageC.currentFloor = floorTag
-                print("Carriage C is at: \(floorTag.desc())")
+                print(" {animatecarriageC} Carriage C is at: \(floorTag.desc()); \(self.carriageC.destinationStatus)")
             })
         }
     }
@@ -432,7 +432,7 @@ extension BuildingViewController {
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             self.carriageD.currentFloor = floorTag
-            print("Carriage D is at: \(floorTag.desc())")
+            print(" {animatecarriageD} Carriage D is at: \(floorTag.desc()); \(self.carriageD.destinationStatus)")
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 
             })

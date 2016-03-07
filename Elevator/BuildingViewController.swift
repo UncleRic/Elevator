@@ -346,6 +346,10 @@ extension BuildingViewController {
     
     func animatecarriageA(floorTag:FloorTag) {
         
+        if floorTag == .penthouse || floorTag == .ground {
+            self.carriageA.destinationStatus = .stationary
+        }
+        
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             
             var myCenter = self.carriageA.center
@@ -373,6 +377,10 @@ extension BuildingViewController {
     
     func animatecarriageB(floorTag:FloorTag) {
         
+        if floorTag == .penthouse || floorTag == .ground {
+             self.carriageB.destinationStatus = .stationary
+        }
+        
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageB.center
             myCenter.y = floorTag.floorPosn()
@@ -397,6 +405,10 @@ extension BuildingViewController {
     
     func animatecarriageC(floorTag:FloorTag) {
         
+        if floorTag == .penthouse || floorTag == .ground {
+            self.carriageC.destinationStatus = .stationary
+        }
+        
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageC.center
             myCenter.y = floorTag.floorPosn()
@@ -419,6 +431,11 @@ extension BuildingViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func animatecarriageD(floorTag:FloorTag) {
+        
+        if floorTag == .penthouse || floorTag == .ground {
+            self.carriageD.destinationStatus = .stationary
+        }
+        
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
             var myCenter = self.carriageD.center
             myCenter.y = floorTag.floorPosn()

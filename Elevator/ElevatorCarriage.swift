@@ -14,6 +14,10 @@ class CarriageView:UIView {
     
     var status:CarriageDestinationTuple {
         get {
+            if (currentFloor == .penthouse && destinationStatus == .upwardBound) ||
+               (currentFloor == .ground && destinationStatus == .downwardBound) {
+                destinationStatus = .stationary
+            }
             return (direction:destinationStatus, nextFloor:currentFloor.rawValue)
         }
     }

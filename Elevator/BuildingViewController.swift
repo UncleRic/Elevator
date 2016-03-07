@@ -73,6 +73,11 @@ class  BuildingViewController: UIViewController {
         let infoDict = RideRequestDict()
         NSNotificationCenter.defaultCenter().postNotificationName(kRideRequestNotification, object:nil, userInfo:infoDict)
         
+        carriageA.destinationStatus = .stationary
+        carriageB.destinationStatus = .upwardBound
+        carriageC.destinationStatus = .upwardBound
+        carriageD.destinationStatus = .downwardBound
+        
         animatecarriageA(.first)
         animatecarriageB(.penthouse)
         animatecarriageC(.third)
@@ -128,11 +133,15 @@ class  BuildingViewController: UIViewController {
         if let floor = FloorTag(rawValue: sender.view!.tag) {
             let floorString = floor.desc()
             let infoDict:Dictionary = [kDestinationFloor:sender.view!.tag]
-            
-            showAlert(sender: self, withTitle: floorString, withMessage: "", userInfo:infoDict, alertPurpose:.floorButton)
+            if floor == .penthouse {
+                showAlert(sender: self, withTitle: floorString, withMessage: "", userInfo:infoDict, alertPurpose:.penthouseButton)
+            } else if floor == .ground {
+                 showAlert(sender: self, withTitle: floorString, withMessage: "", userInfo:infoDict, alertPurpose:.groundButton)
+            } else {
+                showAlert(sender: self, withTitle: floorString, withMessage: "", userInfo:infoDict, alertPurpose:.floorButton)
+            }
         }
     }
-    
     // -----------------------------------------------------------------------------------------------------
     // MARK: -
     
@@ -142,7 +151,7 @@ class  BuildingViewController: UIViewController {
             carriage.destinationStatus == .stationary &&
             carriage.currentFloor.rawValue <= currentFloor {
                 if carriage.currentFloor.rawValue == currentFloor {
-                    liftCarriage(CarriageTag(rawValue:currentFloor)!, floorTag: FloorTag(rawValue:currentFloor)!)
+                    liftCarriage(CarriageTag(rawValue: carriage.tag)!, floorTag: FloorTag(rawValue:currentFloor)!)
                     return
                 }
                 // Get the nearest carriage that's in route:
@@ -163,10 +172,26 @@ class  BuildingViewController: UIViewController {
     // -----------------------------------------------------------------------------------------------------
     
     func carriageDownwardBound(currentFloor:Int) {
+        var carriageTuples = [CarriageFloorTuple]()
         for carriage in carriages where carriage.destinationStatus == .downwardBound ||
             carriage.destinationStatus == .stationary &&
             carriage.currentFloor.rawValue >= currentFloor {
+                if carriage.currentFloor.rawValue == currentFloor {
+                    liftCarriage(CarriageTag(rawValue:currentFloor)!, floorTag: FloorTag(rawValue:currentFloor)!)
+                    return
+                }
+                // Get the nearest carriage that's in route:
+                let delta = currentFloor - carriage.currentFloor.rawValue
+                let myTuple:CarriageFloorTuple = (carriageTag:carriage.tag, currentFloor:delta)
+                carriageTuples.append(myTuple)
         }
+        carriageTuples = carriageTuples.sort() {$0.currentFloor < $1.currentFloor}
+        
+        let selectedCarriageTag = CarriageTag(rawValue:carriageTuples[0].carriageTag)!
+        
+        liftCarriage(selectedCarriageTag, floorTag: FloorTag(rawValue:currentFloor)!)
+        
+        
     }
     
     // -----------------------------------------------------------------------------------------------------
@@ -177,9 +202,8 @@ class  BuildingViewController: UIViewController {
         case .upwardBound:
             carriageUpwardBound(currentFloor.currentFloor)
         default:
-            carriageUpwardBound(currentFloor.currentFloor)
+            carriageDownwardBound(currentFloor.currentFloor)
         }
-        
     }
 }
 
@@ -259,7 +283,7 @@ extension BuildingViewController {
                     } else {
                         NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
                     }
-
+                    
                 case .carriageBTag:
                     if self.carriageADoorConstraints[0].active {
                         NSLayoutConstraint.deactivateConstraints(self.carriageBDoorConstraints)
@@ -298,12 +322,12 @@ extension BuildingViewController {
             self.carriageA.center = myCenter
             
             // Close/Open Carriage Door:
-//            if self.carriageADoorConstraints[0].active {
-//                NSLayoutConstraint.deactivateConstraints(self.carriageADoorConstraints)
-//            } else {
-//                NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
-//            }
-//            self.view.layoutIfNeeded()
+            //            if self.carriageADoorConstraints[0].active {
+            //                NSLayoutConstraint.deactivateConstraints(self.carriageADoorConstraints)
+            //            } else {
+            //                NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
+            //            }
+            //            self.view.layoutIfNeeded()
             
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -323,12 +347,12 @@ extension BuildingViewController {
             myCenter.y = floorTag.floorPosn()
             self.carriageB.center = myCenter
             
-//            // Close/Open Carriage Door:
-//            if self.carriageBDoorConstraints[0].active {
-//                NSLayoutConstraint.deactivateConstraints(self.carriageBDoorConstraints)
-//            } else {
-//                NSLayoutConstraint.activateConstraints(self.carriageBDoorConstraints)
-//            }
+            //            // Close/Open Carriage Door:
+            //            if self.carriageBDoorConstraints[0].active {
+            //                NSLayoutConstraint.deactivateConstraints(self.carriageBDoorConstraints)
+            //            } else {
+            //                NSLayoutConstraint.activateConstraints(self.carriageBDoorConstraints)
+            //            }
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -346,12 +370,12 @@ extension BuildingViewController {
             var myCenter = self.carriageC.center
             myCenter.y = floorTag.floorPosn()
             self.carriageC.center = myCenter
-//            // Close/Open Carriage Door:
-//            if self.carriageCDoorConstraints[0].active {
-//                NSLayoutConstraint.deactivateConstraints(self.carriageCDoorConstraints)
-//            } else {
-//                NSLayoutConstraint.activateConstraints(self.carriageCDoorConstraints)
-//            }
+            //            // Close/Open Carriage Door:
+            //            if self.carriageCDoorConstraints[0].active {
+            //                NSLayoutConstraint.deactivateConstraints(self.carriageCDoorConstraints)
+            //            } else {
+            //                NSLayoutConstraint.activateConstraints(self.carriageCDoorConstraints)
+            //            }
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -368,12 +392,12 @@ extension BuildingViewController {
             var myCenter = self.carriageD.center
             myCenter.y = floorTag.floorPosn()
             self.carriageD.center = myCenter
-//            // Close/Open Carriage Door:
-//            if self.carriageDDoorConstraints[0].active {
-//                NSLayoutConstraint.deactivateConstraints(self.carriageDDoorConstraints)
-//            } else {
-//                NSLayoutConstraint.activateConstraints(self.carriageDDoorConstraints)
-//            }
+            //            // Close/Open Carriage Door:
+            //            if self.carriageDDoorConstraints[0].active {
+            //                NSLayoutConstraint.deactivateConstraints(self.carriageDDoorConstraints)
+            //            } else {
+            //                NSLayoutConstraint.activateConstraints(self.carriageDDoorConstraints)
+            //            }
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             self.carriageD.currentFloor = floorTag

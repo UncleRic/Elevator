@@ -162,6 +162,11 @@ class  BuildingViewController: UIViewController {
                 carriageTuples.append(myTuple)
         }
         
+        if carriageTuples.isEmpty {
+            showAlert(sender: self, withTitle: "Out of Service", withMessage: "No elevators available.", userInfo: nil, alertPurpose: .simple)
+            return
+        }
+        
         carriageTuples = carriageTuples.sort() {$0.currentFloor < $1.currentFloor}
         
         let selectedCarriageTag = CarriageTag(rawValue:carriageTuples[0].carriageTag)!
@@ -187,6 +192,12 @@ class  BuildingViewController: UIViewController {
                 let myTuple:CarriageFloorTuple = (carriageTag:carriage.tag, currentFloor:delta)
                 carriageTuples.append(myTuple)
         }
+        
+        if carriageTuples.isEmpty {
+            showAlert(sender: self, withTitle: "Out of Service", withMessage: "No elevators available.", userInfo: nil, alertPurpose: .simple)
+            return
+        }
+        
         carriageTuples = carriageTuples.sort() {$0.currentFloor < $1.currentFloor}
         
         let selectedCarriageTag = CarriageTag(rawValue:carriageTuples[0].carriageTag)!
@@ -295,7 +306,7 @@ extension BuildingViewController {
         if isSameFloor {
             let index = (carriage.rawValue -  1)
             let currentDoorConstraints = self.carriageDoorConstraints[index]
-
+            
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
                 if currentDoorConstraints[0].active {
                     NSLayoutConstraint.deactivateConstraints(currentDoorConstraints)
@@ -307,42 +318,81 @@ extension BuildingViewController {
             
         } else {
             // Animate the elevator movement + opening elevator door:
-            UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
-                switch carriage {
-                case .carriageATag:
+            
+            switch carriage {
+            case .carriageATag:
+                UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
                     self.carriageA.center.y = floorTag.floorPosn()
-                    print("Carriage A is at: \(floorTag.desc()); \(self.carriageA.destinationStatus)")
-                    
-                case .carriageBTag:
-                    self.carriageB.center.y = floorTag.floorPosn()
-                    print("Carriage B is at: \(floorTag.desc()) \(self.carriageB.destinationStatus)")
-                    
-                case .carriageCTag:
-                    self.carriageC.center.y = floorTag.floorPosn()
-                    print("Carriage C is at: \(floorTag.desc()) \(self.carriageC.destinationStatus)")
-                    
-                case .carriageDTag:
-                    self.carriageD.center.y = floorTag.floorPosn()
-                    print("Carriage D is at: \(floorTag.desc()) \(self.carriageD.destinationStatus)")
-                    
+                }) {(AfterCarriageReposition) in
+                    UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+                        if self.carriageADoorConstraints[0].active {
+                            NSLayoutConstraint.deactivateConstraints(self.carriageADoorConstraints)
+                        } else {
+                            NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
+                        }
+                        self.view.layoutIfNeeded()
+                    })
                 }
-                self.view.layoutIfNeeded()
                 
-            }) {(AfterCarriageReposition) in
-                UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
-                    if self.carriageADoorConstraints[0].active {
-                        NSLayoutConstraint.deactivateConstraints(self.carriageADoorConstraints)
-                    } else {
-                        NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
-                    }
-                    self.view.layoutIfNeeded()
-                })
+                print("Carriage A is at: \(floorTag.desc()); \(self.carriageA.destinationStatus)")
+                
+            case .carriageBTag:
+                UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
+                    self.carriageB.center.y = floorTag.floorPosn()
+                }) {(AfterCarriageReposition) in
+                    UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+                        if self.carriageBDoorConstraints[0].active {
+                            NSLayoutConstraint.deactivateConstraints(self.carriageBDoorConstraints)
+                        } else {
+                            NSLayoutConstraint.activateConstraints(self.carriageBDoorConstraints)
+                        }
+                        self.view.layoutIfNeeded()
+                    })
+                }
+
+                print("Carriage B is at: \(floorTag.desc()) \(self.carriageB.destinationStatus)")
+                
+            case .carriageCTag:
+                UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
+                    self.carriageC.center.y = floorTag.floorPosn()
+                }) {(AfterCarriageReposition) in
+                    UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+                        if self.carriageCDoorConstraints[0].active {
+                            NSLayoutConstraint.deactivateConstraints(self.carriageCDoorConstraints)
+                        } else {
+                            NSLayoutConstraint.activateConstraints(self.carriageCDoorConstraints)
+                        }
+                        self.view.layoutIfNeeded()
+                    })
+                }
+
+                print("Carriage C is at: \(floorTag.desc()) \(self.carriageC.destinationStatus)")
+                
+            case .carriageDTag:
+                UIView .animateWithDuration(BuildingViewController.myDuration, animations: {
+                    self.carriageD.center.y = floorTag.floorPosn()
+                }) {(AfterCarriageReposition) in
+                    UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
+                        if self.carriageDDoorConstraints[0].active {
+                            NSLayoutConstraint.deactivateConstraints(self.carriageDDoorConstraints)
+                        } else {
+                            NSLayoutConstraint.activateConstraints(self.carriageDDoorConstraints)
+                        }
+                        self.view.layoutIfNeeded()
+                    })
+                }
+
+                print("Carriage D is at: \(floorTag.desc()) \(self.carriageD.destinationStatus)")
+                
             }
+            self.view.layoutIfNeeded()
+            
         }
     }
     
     
     // -----------------------------------------------------------------------------------------------------
+    // MARK: -
     
     func animatecarriageA(floorTag:FloorTag) {
         
@@ -378,7 +428,7 @@ extension BuildingViewController {
     func animatecarriageB(floorTag:FloorTag) {
         
         if floorTag == .penthouse || floorTag == .ground {
-             self.carriageB.destinationStatus = .stationary
+            self.carriageB.destinationStatus = .stationary
         }
         
         UIView .animateWithDuration(BuildingViewController.myDuration, animations: {

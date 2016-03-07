@@ -26,10 +26,10 @@ func showAlert(sender sender:UIViewController,
         
         switch alertPurpose {
         case .simple:
-            var OKAction:UIAlertAction?
-            OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
-                alertController.addAction(OKAction!)
+            let OKAction = UIAlertAction(title: "OK", style: .Default) { (action) in
             }
+            alertController.addAction(OKAction)
+            sender.presentViewController(alertController, animated: true, completion: nil)
             
         case .penthouseButton:
             var DownButton:UIAlertAction?

@@ -129,16 +129,7 @@ class  BuildingViewController: UIViewController {
     @IBAction func handleTapForCarriage(sender:UITapGestureRecognizer) {
         
         if let carriage = CarriageTag(rawValue: sender.view!.tag) {
-            switch carriage {
-            case .carriageATag:
-                print("Carriage A")
-            case .carriageBTag:
-                print("Carriage B")
-            case .carriageCTag:
-                print("Carriage C")
-            case .carriageDTag:
-                print("Carriage D")
-            }
+            closeDoor(carriage)
         }
     }
     
@@ -339,6 +330,17 @@ extension BuildingViewController {
     func summonCarriage(carriage:CarriageTag, floorTag:FloorTag) {
         
         closeDoor(carriage)
+        
+        let isDownwardBound = accessCarriage(carriage).currentFloor == .penthouse || accessCarriage(carriage).currentFloor.rawValue > floorTag.rawValue
+        let isUpwardBound = accessCarriage(carriage).currentFloor == .ground || accessCarriage(carriage).currentFloor.rawValue < floorTag.rawValue
+        
+        if isDownwardBound {
+            accessCarriage(carriage).destinationStatus = .downwardBound
+        } else if isUpwardBound {
+            accessCarriage(carriage).destinationStatus = .upwardBound
+        } else {
+            return
+        }
         
         // Reset carriage's current floor-status:
         accessCarriage(carriage).currentFloor = floorTag

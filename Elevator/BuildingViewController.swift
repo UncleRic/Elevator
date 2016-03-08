@@ -281,7 +281,7 @@ extension BuildingViewController {
     // -----------------------------------------------------------------------------------------------------
     // MARK: -
     
-    func getCarriage(carriage:CarriageTag) -> CarriageView {
+    func accessCarriage(carriage:CarriageTag) -> CarriageView {
         switch carriage {
         case .carriageATag:
             return self.carriageA
@@ -339,6 +339,9 @@ extension BuildingViewController {
     func summonCarriage(carriage:CarriageTag, floorTag:FloorTag) {
         
         closeDoor(carriage)
+        
+        // Reset carriage's current floor-status:
+        accessCarriage(carriage).currentFloor = floorTag
         
         var isSameFloor = false
         

@@ -12,6 +12,7 @@ enum AlertPurpose:Int {
     case penthouseButton
     case groundButton
     case floorButton
+    case carriageButton
 }
 
 func showAlert(sender sender:UIViewController,
@@ -81,6 +82,45 @@ func showAlert(sender sender:UIViewController,
                 sender.presentViewController(alertController, animated: true, completion: nil)
             }
             
+        case .carriageButton:
+            var penthouseButton:UIAlertAction?
+            var groundButton:UIAlertAction?
+            var firstButton:UIAlertAction?
+            var secondButton:UIAlertAction?
+            var thirdButton:UIAlertAction?
+            
+            penthouseButton = UIAlertAction(title: "Penthouse", style: .Default) { (action) in
+                //                    let targetFloor:CurrentFloorRequestTuple = (direction:CarriageStatus.upwardBound, currentFloor:originFloor)
+                //                    (sender as! BuildingViewController).gotoFloor(targetFloor)
+            }
+            
+            thirdButton = UIAlertAction(title: "Third Floor", style: .Default) { (action) in
+                //                    let targetFloor:CurrentFloorRequestTuple = (direction:CarriageStatus.downwardBound, currentFloor:originFloor)
+                //                    (sender as! BuildingViewController).gotoFloor(targetFloor)
+            }
+            
+            secondButton = UIAlertAction(title: "Second Floor", style: .Default) { (action) in
+                //                    let targetFloor:CurrentFloorRequestTuple = (direction:CarriageStatus.downwardBound, currentFloor:originFloor)
+                //                    (sender as! BuildingViewController).gotoFloor(targetFloor)
+            }
+            
+            firstButton = UIAlertAction(title: "First Floor", style: .Default) { (action) in
+                //                    let targetFloor:CurrentFloorRequestTuple = (direction:CarriageStatus.downwardBound, currentFloor:originFloor)
+                //                    (sender as! BuildingViewController).gotoFloor(targetFloor)
+            }
+            
+            groundButton = UIAlertAction(title: "Ground Floor", style: .Default) { (action) in
+                //                    let targetFloor:CurrentFloorRequestTuple = (direction:CarriageStatus.downwardBound, currentFloor:originFloor)
+                //                    (sender as! BuildingViewController).gotoFloor(targetFloor)
+            }
+            
+            alertController.addAction(penthouseButton!)
+            alertController.addAction(thirdButton!)
+            alertController.addAction(secondButton!)
+            alertController.addAction(firstButton!)
+            alertController.addAction(groundButton!)
+            
+            sender.presentViewController(alertController, animated: true, completion: nil)
         }
     })
 }

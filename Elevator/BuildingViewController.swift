@@ -130,6 +130,7 @@ class  BuildingViewController: UIViewController {
         
         if let carriage = CarriageTag(rawValue: sender.view!.tag) {
             closeDoor(carriage)
+            showAlert(sender: self, withTitle: "Elevator", withMessage: "", userInfo: nil, alertPurpose: .carriageButton)
         }
     }
     

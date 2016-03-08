@@ -11,6 +11,7 @@ class CarriageView:UIView {
     var currentFloor:FloorTag = .ground
     var selectedFloors = [Int]()
     var destinationStatus:CarriageStatus = .stationary
+    var isDoorOpen = false
     
     var status:CarriageDestinationTuple {
         get {

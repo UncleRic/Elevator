@@ -440,6 +440,8 @@ extension BuildingViewController {
     
     func animatecarriageA(floorTag:FloorTag) {
         
+        closeDoor(CarriageTag.carriageATag)
+        
         if floorTag == .penthouse || floorTag == .ground {
             self.carriageA.destinationStatus = .stationary
         }
@@ -449,14 +451,6 @@ extension BuildingViewController {
             var myCenter = self.carriageA.center
             myCenter.y = floorTag.floorPosn()
             self.carriageA.center = myCenter
-            
-            // Close/Open Carriage Door:
-            //            if self.carriageADoorConstraints[0].active {
-            //                NSLayoutConstraint.deactivateConstraints(self.carriageADoorConstraints)
-            //            } else {
-            //                NSLayoutConstraint.activateConstraints(self.carriageADoorConstraints)
-            //            }
-            //            self.view.layoutIfNeeded()
             
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -471,6 +465,8 @@ extension BuildingViewController {
     
     func animatecarriageB(floorTag:FloorTag) {
         
+        closeDoor(CarriageTag.carriageBTag)
+
         if floorTag == .penthouse || floorTag == .ground {
             self.carriageB.destinationStatus = .stationary
         }
@@ -479,13 +475,6 @@ extension BuildingViewController {
             var myCenter = self.carriageB.center
             myCenter.y = floorTag.floorPosn()
             self.carriageB.center = myCenter
-            
-            //            // Close/Open Carriage Door:
-            //            if self.carriageBDoorConstraints[0].active {
-            //                NSLayoutConstraint.deactivateConstraints(self.carriageBDoorConstraints)
-            //            } else {
-            //                NSLayoutConstraint.activateConstraints(self.carriageBDoorConstraints)
-            //            }
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -499,6 +488,8 @@ extension BuildingViewController {
     
     func animatecarriageC(floorTag:FloorTag) {
         
+        closeDoor(CarriageTag.carriageCTag)
+
         if floorTag == .penthouse || floorTag == .ground {
             self.carriageC.destinationStatus = .stationary
         }
@@ -507,12 +498,6 @@ extension BuildingViewController {
             var myCenter = self.carriageC.center
             myCenter.y = floorTag.floorPosn()
             self.carriageC.center = myCenter
-            //            // Close/Open Carriage Door:
-            //            if self.carriageCDoorConstraints[0].active {
-            //                NSLayoutConstraint.deactivateConstraints(self.carriageCDoorConstraints)
-            //            } else {
-            //                NSLayoutConstraint.activateConstraints(self.carriageCDoorConstraints)
-            //            }
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
@@ -526,6 +511,8 @@ extension BuildingViewController {
     
     func animatecarriageD(floorTag:FloorTag) {
         
+        closeDoor(CarriageTag.carriageDTag)
+
         if floorTag == .penthouse || floorTag == .ground {
             self.carriageD.destinationStatus = .stationary
         }
@@ -534,12 +521,6 @@ extension BuildingViewController {
             var myCenter = self.carriageD.center
             myCenter.y = floorTag.floorPosn()
             self.carriageD.center = myCenter
-            //            // Close/Open Carriage Door:
-            //            if self.carriageDDoorConstraints[0].active {
-            //                NSLayoutConstraint.deactivateConstraints(self.carriageDDoorConstraints)
-            //            } else {
-            //                NSLayoutConstraint.activateConstraints(self.carriageDDoorConstraints)
-            //            }
             self.view.layoutIfNeeded()
         }) {(AfterCarriageReposition) in
             self.carriageD.currentFloor = floorTag

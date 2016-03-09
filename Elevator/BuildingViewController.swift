@@ -235,6 +235,10 @@ class  BuildingViewController: UIViewController {
 extension BuildingViewController {
     
     func resetElevators(animate:Bool = true) {
+        self.carriageA.destinationStatus = .stationary
+        self.carriageB.destinationStatus = .stationary
+        self.carriageC.destinationStatus = .stationary
+        self.carriageD.destinationStatus = .stationary
         
         var myCenter = self.carriageA.center
         myCenter.y = FloorPosition.ground.rawValue

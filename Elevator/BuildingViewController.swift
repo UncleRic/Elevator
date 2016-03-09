@@ -302,6 +302,17 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
+    func availableCarriage(floor:FloorTag, destinationRequest:CarriageStatus) -> CarriageTag? {
+        
+        for carriage in carriages where floor == carriage.currentFloor &&
+            carriage.destinationStatus == destinationRequest || carriage.destinationStatus == CarriageStatus.stationary {
+                return CarriageTag(rawValue:carriage.tag)
+        }
+        return nil
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
     func closeDoor(carriage:CarriageTag) {
         
         if isDoorClosed(carriage) {
@@ -466,7 +477,7 @@ extension BuildingViewController {
     func animatecarriageB(floorTag:FloorTag) {
         
         closeDoor(CarriageTag.carriageBTag)
-
+        
         if floorTag == .penthouse || floorTag == .ground {
             self.carriageB.destinationStatus = .stationary
         }
@@ -489,7 +500,7 @@ extension BuildingViewController {
     func animatecarriageC(floorTag:FloorTag) {
         
         closeDoor(CarriageTag.carriageCTag)
-
+        
         if floorTag == .penthouse || floorTag == .ground {
             self.carriageC.destinationStatus = .stationary
         }
@@ -512,7 +523,7 @@ extension BuildingViewController {
     func animatecarriageD(floorTag:FloorTag) {
         
         closeDoor(CarriageTag.carriageDTag)
-
+        
         if floorTag == .penthouse || floorTag == .ground {
             self.carriageD.destinationStatus = .stationary
         }

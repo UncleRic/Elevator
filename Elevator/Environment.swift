@@ -60,11 +60,37 @@ enum FloorTag:Int {
     }
 }
 
+func floorTagFromString(str:String) -> FloorTag {
+    if str == "The Penthouse" {
+        return .penthouse
+    } else if str == "Third Floor" {
+        return .third
+    } else if str == "Second Floor" {
+        return .second
+    } else if str == "First Floor" {
+        return .first
+    }
+    return .ground
+}
+
+
 enum CarriageTag:Int {
     case carriageATag = 1
     case carriageBTag = 2
     case carriageCTag = 3
     case carriageDTag = 4
+    func desc() -> String {
+        switch self {
+        case .carriageATag:
+            return "Carriage A"
+        case .carriageBTag:
+            return "Carriage B"
+        case .carriageCTag:
+            return "Carriage C"
+        case .carriageDTag:
+            return "Carriage D"
+        }
+    }
 }
 
 enum CarriageStatus:Int {

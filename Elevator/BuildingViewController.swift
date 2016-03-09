@@ -130,7 +130,9 @@ class  BuildingViewController: UIViewController {
         
         if let carriage = CarriageTag(rawValue: sender.view!.tag) {
             closeDoor(carriage)
-            showAlert(sender: self, withTitle: "Elevator", withMessage: "", userInfo: nil, alertPurpose: .carriageButton)
+            let floorDesc = accessCarriage(carriage).currentFloor.desc()
+            
+            showAlert(sender: self, withTitle:floorDesc, withMessage:"", userInfo: nil, alertPurpose: .carriageButton)
         }
     }
     
@@ -288,14 +290,22 @@ extension BuildingViewController {
     
     // -----------------------------------------------------------------------------------------------------
     
-    func closeDoor(carriage:CarriageTag) {
+    func isDoorClosed(carriage:CarriageTag) -> Bool {
         let index = (carriage.rawValue -  1)
         let currentDoorConstraints = self.carriageDoorConstraints[index]
-        let isClosed = currentDoorConstraints[0].active
+        return currentDoorConstraints[0].active
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    func closeDoor(carriage:CarriageTag) {
         
-        if isClosed {
+        if isDoorClosed(carriage) {
             return
         }
+        
+        let index = (carriage.rawValue -  1)
+        let currentDoorConstraints = self.carriageDoorConstraints[index]
         
         UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
             NSLayoutConstraint.activateConstraints(currentDoorConstraints)
@@ -309,13 +319,12 @@ extension BuildingViewController {
     
     func openDoor(carriage:CarriageTag) {
         
-        let constraintIndex = (carriage.rawValue -  1)
-        let currentDoorConstraints = self.carriageDoorConstraints[constraintIndex]
-        let isClosed = currentDoorConstraints[0].active
-        
-        guard isClosed else {
+        guard isDoorClosed(carriage) else {
             return
         }
+        
+        let index = (carriage.rawValue -  1)
+        let currentDoorConstraints = self.carriageDoorConstraints[index]
         
         UIView.animateWithDuration(BuildingViewController.myPanelDuration, animations: {
             NSLayoutConstraint.deactivateConstraints(currentDoorConstraints)
